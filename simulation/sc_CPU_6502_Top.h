@@ -89,17 +89,23 @@ SC_MODULE(sc_CPU_6502_Top)
         sensitive << clk;
 
         // VCD Trace
-        //fp = sc_create_vcd_trace_file("sc_CPU_6502");
-        //fp->set_time_unit(100, SC_PS);
-        //sc_trace(fp, clk, "clk");
-        //sc_trace(fp, reset, "reset");
-        //sc_trace(fp, DI, "DI");
-        //sc_trace(fp, DO, "DO");
-        //sc_trace(fp, WE, "WE");
-        //sc_trace(fp, IRQ, "IRQ");
-        //sc_trace(fp, NMI, "NMI");
-        //sc_trace(fp, RDY, "RDY");
-        //sc_trace(fp, AB, "AB");
+        fp = sc_create_vcd_trace_file("sc_CPU_6502");
+        fp->set_time_unit(100, SC_PS);
+        sc_trace(fp, clk, "clk");
+        sc_trace(fp, reset, "reset");
+        sc_trace(fp, DI, "DI");
+        sc_trace(fp, DO, "DO");
+        sc_trace(fp, WE, "WE");
+        sc_trace(fp, IRQ, "IRQ");
+        sc_trace(fp, NMI, "NMI");
+        sc_trace(fp, RDY, "RDY");
+        sc_trace(fp, AB, "AB");
+
+        sc_trace(fp, u_mem->clk, "mem_clk");
+        sc_trace(fp, u_mem->DI, "mem_DI");
+        sc_trace(fp, u_mem->DO, "mem_DO");
+        sc_trace(fp, u_mem->WE, "mem_WE");
+        sc_trace(fp, u_mem->AB, "mem_AB");
     }
 
     // Destructor

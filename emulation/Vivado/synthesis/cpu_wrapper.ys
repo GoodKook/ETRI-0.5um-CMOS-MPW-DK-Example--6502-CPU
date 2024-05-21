@@ -1,0 +1,10 @@
+### Yosys taargetting Xilinx
+read_verilog ../../../source/ALU.v
+read_verilog ../../../source/cpu.v
+read_verilog ../../cpu_wrapper.v
+
+hierarchy -check -top cpu_wrapper
+
+synth_xilinx -top cpu_wrapper -family xc7 -flatten
+write_verilog  cpu_wrapper.v
+stat

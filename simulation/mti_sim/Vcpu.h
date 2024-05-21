@@ -70,6 +70,9 @@ SC_MODULE(Vcpu)
         sensitive << IRQ;
         sensitive << NMI;
         sensitive << RDY;
+        sensitive << _AB;
+        sensitive << _DO;
+        sensitive << _WE;
 
         // Verilog model instantiation
         u_CPU_6502 = new CPU_6502("u_CPU_6502");

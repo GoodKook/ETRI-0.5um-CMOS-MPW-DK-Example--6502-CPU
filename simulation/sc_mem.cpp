@@ -266,7 +266,8 @@ int sc_mem::ReadBIN(char* BIN_Filename, int Offset)
 	if (fp_bin == 0)
 	{
 		cout << "ROM/BIN file not found!" << endl;
-        delete binBuff;
+        //delete binBuff;
+        delete[] binBuff;
 		return -1;
 	}
 
@@ -306,7 +307,7 @@ int sc_mem::ReadBIN(char* BIN_Filename, int Offset)
         }
     }
     
-    delete binBuff;
+    delete[] binBuff;
     return 0;
 }
 

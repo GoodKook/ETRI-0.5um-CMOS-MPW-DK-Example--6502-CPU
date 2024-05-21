@@ -34,6 +34,8 @@ all :
 	@echo '        [Note1] Build 6502 App. using CC65 C-Compiler. See examples at ./Apple-1'
 	@echo '        [Note2] C-compiler and examples are gzipped "Apple-1_SDK.tar.gz"'
 	@echo ''
+	@echo '    make wave'
+	@echo ''
 	@echo '    make clean'
 	@echo '        Clean working folder'
 	@echo ''
@@ -42,6 +44,8 @@ all :
 	@echo '    make mti_fun_run'
 	@echo '    make mti_net_build'
 	@echo '    make mti_net_run'
+	@echo '    make mti_clean'
+	@echo ''
 
 build : $(TARGET_DIR)/$(TARGET) std_input std_output
 
@@ -60,9 +64,13 @@ std_output : std_output.cpp
 run : $(TARGET_DIR)/$(TARGET) std_input std_output
 	rm -f *.fifo
 	xterm -T "Apple-1 Keyboard" ./std_input &
+	sleep 1
 	xterm -T "Apple-1 Display" ./std_output &
 	sleep 1
 	./$(TARGET_DIR)/$(TARGET)
+
+wave : sc_CPU_6502.vcd
+	gtkwave sc_CPU_6502.vcd --save=sc_CPU_6502.gtkw &
 
 clean :
 	rm -rf $(TARGET_DIR)

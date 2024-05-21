@@ -19,7 +19,6 @@
  */
 
 module cpu( clk, reset, AB, DI, DO, WE, IRQ, NMI, RDY );
-
 input clk;              // CPU clock 
 input reset;            // reset signal
 output reg [15:0] AB;   // address bus
