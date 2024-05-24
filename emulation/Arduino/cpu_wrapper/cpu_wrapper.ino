@@ -2,6 +2,7 @@
   CPU_6502's PE SystemC Co-Emulation (FPGA)
 */
 
+#define DELAY_MICROS    1
 
 #define PIN_GET_EMU     26
 #define PIN_LOAD_EMU    28
@@ -46,11 +47,11 @@ void establishContact()
       break;
   }
 }
-
+//------------------------------------------------------------------------------
 void setup()
 {
   // start serial port at 9600 bps:
-  Serial.begin(9600);
+  Serial.begin(115200);
   while (!Serial)
   {
     ;  // wait for serial port to connect. Needed for native USB port only
@@ -145,9 +146,9 @@ void Clk_EMU()
 {
   // Set
   digitalWrite(PIN_CLK_EMU, HIGH);
-  delayMicroseconds(100);
+  delayMicroseconds(DELAY_MICROS);
   digitalWrite(PIN_CLK_EMU, LOW);
-  delayMicroseconds(100);
+  delayMicroseconds(DELAY_MICROS);
 }
 
 void EMU_Input(uint8_t address, uint8_t data)
@@ -168,9 +169,9 @@ void DUT_Input()
 void DUT_Posedge_Clk()
 {
   digitalWrite(PIN_CLK_DUT, LOW);
-  delayMicroseconds(100);
+  delayMicroseconds(DELAY_MICROS);
   digitalWrite(PIN_CLK_DUT, HIGH);
-  delayMicroseconds(100);
+  delayMicroseconds(DELAY_MICROS);
 }
 
 void DUT_Output()

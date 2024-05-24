@@ -74,7 +74,7 @@ SC_MODULE(CPU_6502)
                           (uint8_t)(IRQ.read()?   0x02:0x00) |
                           (uint8_t)(reset.read()? 0x01:0x00) ;
             txPacket[1] = (uint8_t)((sc_uint<8>)(DI.read()));
-
+            
             // Send to Emulator
             for (int i=0; i<N_TX; i++)
             {
@@ -87,7 +87,7 @@ SC_MODULE(CPU_6502)
                 while(read(fd, &y, 1)<=0)   usleep(1);
                 rxPacket[i] = y;
             }
-
+            
             AB.write((sc_bv<16>)((uint16_t)rxPacket[0]<<8 | (uint16_t)rxPacket[1]));
             DO.write((sc_bv<8>)rxPacket[2]);
             WE.write((rxPacket[3]&0x01)? true:false);
@@ -136,7 +136,7 @@ SC_MODULE(CPU_6502)
             return;
         }
         // Set up serial port
-        options.c_cflag = B9600 | CS8 | CLOCAL | CREAD;
+        options.c_cflag = B115200 | CS8 | CLOCAL | CREAD;
         options.c_iflag = IGNPAR;
         options.c_oflag = 0;
         options.c_lflag = 0;

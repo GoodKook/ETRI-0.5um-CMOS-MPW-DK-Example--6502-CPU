@@ -1,6 +1,6 @@
 #!/bin/tcsh -f
 #------------------------------------------------------------
-# project variables for project ~/ETRI050_DesignKit/devel/Ref_Design/CPU_6502
+# project variables for project ~/ETRI050_DesignKit/Ref_Design/CPU_6502
 #------------------------------------------------------------
 
 # Flow options:

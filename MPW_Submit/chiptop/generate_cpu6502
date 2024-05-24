@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+~/ETRI050_DesignKit/scripts/generate_chip.sh cpu6502 650 650 0 0 1043 1023.2
+

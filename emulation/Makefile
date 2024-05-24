@@ -34,6 +34,10 @@ all :
 	@echo ''
 	@echo '    make clean'
 	@echo '        Clean working folder'
+	@echo ''
+	@echo 'CPU_6502 Stand-Alone:'
+	@echo '    make standalone'
+	@echo ''
 
 build : $(TOP_MODULE) std_input std_output
 
@@ -57,6 +61,12 @@ run : $(TOP_MODULE) std_input std_output
 	xterm -T "Apple-1 Display" ./std_output &
 	sleep 1
 	./$(TOP_MODULE)
+	
+standalone : CPU_6502_SA
+	./CPU_6502_SA
+
+CPU_6502_SA : CPU_6502_SA.cpp
+	g++ -o CPU_6502_SA CPU_6502_SA.cpp
 
 wave : sc_CPU_6502.vcd
 	gtkwave sc_CPU_6502.vcd --save=sc_CPU_6502.gtkw &
@@ -66,6 +76,7 @@ clean :
 	rm -rf $(TOP_MODULE)
 	rm -f std_input
 	rm -f std_output
+	rm -f CPU_6502_SA
 	rm -f CPU_terminal
 	rm -f *.vcd
 	rm -f *.fifo

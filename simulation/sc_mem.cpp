@@ -152,8 +152,8 @@ void sc_mem::mem_Thread()
                 }
                 else
                 {
-                    mem[Address] = (KBD_Buff[nIdx] | 0x80); // | Valid input
-                    mem[PIA_KBD_CTL] = (mem[PIA_KBD_CTL] & 0x3F);	// Keyboard ready
+                    mem[Address] = (KBD_Buff[nIdx] | 0x80);         // Valid input
+                    mem[PIA_KBD_CTL] = (mem[PIA_KBD_CTL] & 0x3F);	// Keyboard empty
                     KBD_Buff[nIdx++] = '\0';
                 }
 			}
