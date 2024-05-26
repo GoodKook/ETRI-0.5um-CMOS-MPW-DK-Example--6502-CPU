@@ -1,0 +1,103 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2.2 (lin64) Build 4126759 Thu Feb  8 23:52:05 MST 2024
+| Date         : Sun May 26 13:14:37 2024
+| Host         : GoodKook-Skull running 64-bit Ubuntu 20.04.6 LTS
+| Command      : report_control_sets -verbose -file cpu_wrapper_control_sets_placed.rpt
+| Design       : cpu_wrapper
+| Device       : xc7a100t
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    25 |
+|    Minimum number of control sets                        |    25 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    99 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    25 |
+| >= 0 to < 4        |    10 |
+| >= 4 to < 6        |     2 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     7 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     5 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               4 |            1 |
+| No           | No                    | Yes                    |              16 |           10 |
+| No           | Yes                   | No                     |               1 |            1 |
+| Yes          | No                    | No                     |              65 |           26 |
+| Yes          | No                    | Yes                    |             119 |           52 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+---------------+------------------+------------------+----------------+--------------+
+|  Clock Signal  | Enable Signal | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+---------------+------------------+------------------+----------------+--------------+
+|  u_cpu.ALU.clk | _0144_[4]     | reset            |                1 |              1 |         1.00 |
+|  u_cpu.ALU.clk | _0207_        | reset            |                1 |              1 |         1.00 |
+|  u_cpu.ALU.clk | _0208_        | reset            |                1 |              1 |         1.00 |
+|  u_cpu.ALU.clk | _0212_        | reset            |                1 |              1 |         1.00 |
+|  u_cpu.ALU.clk | _0210_        | reset            |                1 |              1 |         1.00 |
+|  u_cpu.ALU.clk | _0209_        | reset            |                1 |              1 |         1.00 |
+|  u_cpu.ALU.clk | _0206_        | reset            |                1 |              1 |         1.00 |
+|  u_cpu.ALU.clk | _0198_        | reset            |                1 |              1 |         1.00 |
+|  u_cpu.ALU.clk | _0211_        | reset            |                1 |              1 |         1.00 |
+|  u_cpu.ALU.clk | _0230_        | reset            |                1 |              2 |         2.00 |
+|  u_cpu.ALU.clk |               |                  |                1 |              4 |         4.00 |
+|  _0295_        | _0200_        |                  |                1 |              4 |         4.00 |
+|  _0295_        | _0389_[2]     |                  |                4 |              8 |         2.00 |
+|  u_cpu.ALU.clk | _0204_        | reset            |                2 |              8 |         4.00 |
+|  u_cpu.ALU.clk | _0205_        | reset            |                2 |              8 |         4.00 |
+|  u_cpu.ALU.clk | _0202_        | reset            |                3 |              8 |         2.67 |
+|  u_cpu.ALU.clk | _0213_        |                  |                4 |              8 |         2.00 |
+|  u_cpu.ALU.clk | _0203_        | reset            |                4 |              8 |         2.00 |
+|  _0295_        | _0201_        |                  |                3 |              8 |         2.67 |
+|  _0295_        | _0341_[1]     |                  |                7 |             12 |         1.71 |
+|  u_cpu.ALU.clk | _0231_        | reset            |                9 |             16 |         1.78 |
+|  u_cpu.ALU.clk |               | reset            |               11 |             17 |         1.55 |
+|  _0295_        | _0199_        |                  |                7 |             25 |         3.57 |
+|  u_cpu.ALU.clk | _0107_[7]     | reset            |               12 |             28 |         2.33 |
+|  u_cpu.ALU.clk | _0144_[7]     | reset            |               10 |             32 |         3.20 |
++----------------+---------------+------------------+------------------+----------------+--------------+
+
+

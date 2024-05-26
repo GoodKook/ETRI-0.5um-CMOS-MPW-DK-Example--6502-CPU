@@ -77,8 +77,8 @@ int main(int argc, char* argv[])
         return -1;
     }
 
-    // Set up serial port
-    options.c_cflag = B38400 | CS8 | CLOCAL | CREAD;
+    // Set up serial port/B38400/B115200
+    options.c_cflag = B115200 | CS8 | CLOCAL | CREAD;
     options.c_iflag = IGNPAR;
     options.c_oflag = 0;
     options.c_lflag = 0;
@@ -151,10 +151,10 @@ int main(int argc, char* argv[])
         {
             if (strcmp((const char*)szInBuff, "D018: ")) continue;
             
-            printf("Downloading CC65 binary\n");
-            if((fp_bin = fopen("./Arduino/cpu_wrapper_TLM/program.bin", "rb"))==0)
+            printf("Downloading CC65 binary: ./Arduino/cpu_wrapper_SA/program.bin\n");
+            if((fp_bin = fopen("./Arduino/cpu_wrapper_SA/program.bin", "rb"))==0)
             {
-                printf("Fail to open cc65 binary file:./Arduino/cpu_wrapper_TLM/program.bin\n");
+                printf("Fail to open cc65 binary file:./Arduino/cpu_wrapper_SA/program.bin\n");
                 continue;
             }
 
@@ -173,5 +173,7 @@ int main(int argc, char* argv[])
 
         while(write(fd, &tx, 1)<=0)  usleep(1); // Send to Emulator
     }
+    
+    close(fd);
     return 0;
 }

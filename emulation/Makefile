@@ -80,7 +80,8 @@ clean :
 	rm -f CPU_terminal
 	rm -f *.vcd
 	rm -f *.fifo
-	rm -f ./Vivado/vivado*
+	rm -f ./Vivado/CPU_6502/vivado*
+	rm -f ./Vivado/CPU_6502_RT/vivado*
 
 debug : $(TOP_MODULE)
 	ddd $(TOP_MODULE)
