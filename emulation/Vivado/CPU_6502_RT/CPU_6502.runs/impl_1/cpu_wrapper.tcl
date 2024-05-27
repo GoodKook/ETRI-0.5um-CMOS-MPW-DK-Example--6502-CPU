@@ -122,8 +122,8 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param chipscope.maxJobs 2
-  set_param runs.launchOptions { -jobs 4  }
+  set_param chipscope.maxJobs 1
+  set_param runs.launchOptions { -jobs 1  }
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7a100tcsg324-1
   set_property board_part_repo_paths {/home/goodkook/.Xilinx/Vivado/2023.2.2/xhub/board_store/xilinx_board_store} [current_project]
@@ -140,7 +140,7 @@ OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   read_verilog /home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/CPU_6502_RT/synthesis/cpu_wrapper.v
 OPTRACE "read constraints: implementation" START { }
-  read_xdc /home/goodkook/ETRI050_DesignKit/devel/Ref_Design/FIR8/1_Parallel_IO/emulation/Vivado/fir_pe_wrapper.srcs/constrs_1/imports/digilent-xdc-master/Arty-A7-100-Master.xdc
+  read_xdc /home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/CPU_6502_RT/CPU_6502.srcs/constrs_1/imports/digilent-xdc-master/Arty-A7-100-Master.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "read constraints: implementation_pre" START { }
 OPTRACE "read constraints: implementation_pre" END { }

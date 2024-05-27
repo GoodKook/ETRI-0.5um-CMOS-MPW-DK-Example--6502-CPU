@@ -7,8 +7,8 @@ module cpu_wrapper(Data_In, Data_Out, Addr, IO_Req, load_emu, get_emu, clk_emu, 
     input  [7:0] Data_In;
     output [7:0] Data_Out;
     input  [7:0] Addr;
-    input  load_emu, get_emu, clk_emu;
     output IO_Req;
+    input  load_emu, get_emu, clk_emu;
     input  clk_dut;
     output clk_LED;
 
@@ -20,8 +20,8 @@ module cpu_wrapper(Data_In, Data_Out, Addr, IO_Req, load_emu, get_emu, clk_emu, 
     reg [7:0] Data_Out;
 
     // Stimulus & Output capture for DUT
-    reg [7:0]   stimIn_1, stimIn_0;
-    reg [7:0]   vectOut_0, vectOut_1, vectOut_2, vectOut_3;
+    reg [7:0]   stimIn_0, stimIn_1, stimIn_2, stimIn_3, stimIn_4;
+    reg [7:0]   vectOut_0, vectOut_1, vectOut_2, vectOut_3, vectOut_4;
     // DUT interface
     reg         reset;  // reset signal
     reg [15:0]  AB;     // address bus
@@ -30,7 +30,13 @@ module cpu_wrapper(Data_In, Data_Out, Addr, IO_Req, load_emu, get_emu, clk_emu, 
     reg         IRQ;    // interrupt request
     reg         NMI;    // non-maskable interrupt request
     reg         RDY;    // Ready signal. Pauses CPU when RDY=0 
-
+    // Memory Emulation
+    reg Mem_Emu_Ena;
+    reg Mem_Emu_Wen;
+    reg [15:0]  Mem_Emu_Adr;
+    reg [ 7:0]  Mem_Emu_Din;
+    reg [ 7:0]  Mem_Emu_Dout;
+    
     // Emulation Transactor
     always @(posedge clk_emu)
     begin
@@ -41,6 +47,12 @@ module cpu_wrapper(Data_In, Data_Out, Addr, IO_Req, load_emu, get_emu, clk_emu, 
             NMI   <= stimIn_0[2];
             RDY   <= stimIn_0[3];
             DI_P  <= stimIn_1;
+            // Memory Emulation
+            Mem_Emu_Ena       <= stimIn_0[4];
+            Mem_Emu_Wen       <= stimIn_0[5];
+            Mem_Emu_Adr[15:8] <= stimIn_2;
+            Mem_Emu_Adr[ 7:0] <= stimIn_3;
+            Mem_Emu_Din       <= stimIn_4;
         end
         else if (get_emu)   // Capure output from DUT
         begin
@@ -48,12 +60,16 @@ module cpu_wrapper(Data_In, Data_Out, Addr, IO_Req, load_emu, get_emu, clk_emu, 
             vectOut_1    <= AB[7:0];
             vectOut_2    <= DO;
             vectOut_3[0] <= WE;
+            vectOut_4    <= Mem_Emu_Dout;
         end
         else
         begin
             case( Addr )
             0: stimIn_0 <= Data_In;
             1: stimIn_1 <= Data_In;
+            2: stimIn_2 <= Data_In;
+            3: stimIn_3 <= Data_In;
+            4: stimIn_4 <= Data_In;
             endcase
             
             case( Addr )
@@ -61,18 +77,19 @@ module cpu_wrapper(Data_In, Data_Out, Addr, IO_Req, load_emu, get_emu, clk_emu, 
             1: Data_Out <= vectOut_1;
             2: Data_Out <= vectOut_2;
             3: Data_Out <= vectOut_3;
+            4: Data_Out <= vectOut_4;
             endcase
         end
     end
 
     // This is for blinking LED
-    reg [3:0] counter;
+    reg [9:0] counter;
     always @(posedge clk_dut)
     begin
         counter <= counter + 1;
     end
     // Read-back DUT output
-    assign clk_LED = counter[3];   // Monitor emulation process
+    assign clk_LED = counter[9];   // Monitor emulation process
     
     // DUT
     cpu u_cpu (
@@ -86,21 +103,23 @@ module cpu_wrapper(Data_In, Data_Out, Addr, IO_Req, load_emu, get_emu, clk_emu, 
         .NMI(NMI),
         .RDY(RDY) );
 
+    // In/Out Control
+`define PIA_KBD_REG     16'hD010
+`define PIA_KBD_CTL     16'hD011
+`define PIA_DSP_REG     16'hD012
+`define PIA_DSP_CTL     16'hD013
+`define BIN_FILE_LOAD   16'hD018
 
-`define PIA_KBD_REG 16'hD010
-`define PIA_KBD_CTL 16'hD011
-`define PIA_DSP_REG 16'hD012
-`define PIA_DSP_CTL 16'hD013
+    reg  IO_Sel;
+    wire _IO_Req;
 
-    reg IO_Sel;
-    
     always @*
     begin
-        // IO Request
-        if ((AB==`PIA_KBD_REG) || (AB==`PIA_KBD_CTL) || (AB==`PIA_DSP_REG) || (AB==`PIA_DSP_CTL))
-            IO_Req = 1;
+        if ((AB==`PIA_KBD_REG) || (AB==`PIA_KBD_CTL) || (AB==`PIA_DSP_REG) || (AB==`PIA_DSP_CTL) || (AB==`BIN_FILE_LOAD))
+            _IO_Req = 1;
         else
-            IO_Req = 0;
+            _IO_Req = 0;
+
         // DI select
         if (IO_Sel)
             DI = DI_P;
@@ -110,18 +129,47 @@ module cpu_wrapper(Data_In, Data_Out, Addr, IO_Req, load_emu, get_emu, clk_emu, 
 
     always @(posedge clk_dut)
     begin
-        if (reset)
-            IO_Sel <= 0;
-        else if ((AB==`PIA_KBD_REG) || (AB==`PIA_KBD_CTL) || (AB==`PIA_DSP_REG) || (AB==`PIA_DSP_CTL))
+        if ((AB==`PIA_KBD_REG) || (AB==`PIA_KBD_CTL) || (AB==`PIA_DSP_REG) || (AB==`PIA_DSP_CTL) || (AB==`BIN_FILE_LOAD))
             IO_Sel <= 1;
         else
             IO_Sel <= 0;
     end
-    
-    
-            
+    assign IO_Req = IO_Sel | _IO_Req;
+
     // Memory Embedded
     reg [7:0] Memory[65536];   // 64Kbytes
+    reg [7:0] DI_M;
+
+    wire [15:0] _Address;
+    wire [ 7:0] _Din;
+    wire [ 7:0] _Dout;
+    wire        _WE;
+
+    always @*
+    begin
+        if (Mem_Emu_Ena)
+        begin
+            _WE      = Mem_Emu_Wen;
+            _Din     = Mem_Emu_Din;
+            _Address = Mem_Emu_Adr;
+        end
+        else
+        begin
+            _WE      = WE;
+            _Din     = DO;
+            _Address = AB;
+        end;
+    end
+    assign Mem_Emu_Dout = DI_M;
+    
+    always @(posedge clk_dut)
+    begin
+        if (_WE)
+            Memory[_Address] <= _Din;
+        else
+            DI_M <= Memory[_Address];
+    end
+
     initial
     begin
     // 256 bytes read from wozmon.bin
@@ -384,13 +432,4 @@ module cpu_wrapper(Data_In, Data_Out, Addr, IO_Req, load_emu, get_emu, clk_emu, 
         Memory[16'hFFFF] = 8'h00;
     end
     
-    reg [7:0] DI_M;
-    
-    always @(posedge clk_dut)
-    begin
-        if (WE)
-            Memory[AB] <= DO;
-        else
-            DI_M <= Memory[AB];
-    end
 endmodule
