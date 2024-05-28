@@ -17,6 +17,8 @@
 #include <termios.h>
 #include <sys/ioctl.h> // For FIONREAD
 
+#include <dirent.h>
+
 int kbhit(void)
 {
     static bool initflag = false;
@@ -61,6 +63,24 @@ void PrintHelp()
     printf("\t- Type 'h' for Help\n");
     printf("\t- Type 'q' for Exit\n");
 }
+
+char* List_Bin(void)
+{
+    DIR *d;
+    struct dirent *dir;
+    
+    d = opendir(".//Arduino//cpu_wrapper_SA");
+    if (d)
+    {
+        while ((dir = readdir(d)) != NULL)
+        {
+            printf("%s\n", dir->d_name);
+        }
+        closedir(d);
+    }
+    return(0);
+}
+
 int main(int argc, char* argv[])
 {
     // Arduino Serial IF
@@ -98,9 +118,10 @@ int main(int argc, char* argv[])
 
     // -------------------------------------------------------------
     // Command-Line Loop
-    FILE *fp_bin;   // CC65 binary file
-    unsigned char szInBuff[80];
-    int nInBuff = 0;
+    FILE            *fp_bin;   // CC65 binary file
+    unsigned char   szInBuff[80];
+    char            szBinFile[128];
+    int             nInBuff = 0;
     
     PrintHelp();
     
@@ -147,14 +168,37 @@ int main(int argc, char* argv[])
             PrintHelp();
             continue;
         }
+        else if (tx[0]=='l')    // List binary file(s)
+        {
+            //List_Bin();
+            system("ls ./Arduino/cpu_wrapper_SA/*.bin");
+            continue;
+        }
         else if (tx[0]=='d')    // Download CC65 binary
         {
             if (strcmp((const char*)szInBuff, "D018: ")) continue;
             
-            printf("Downloading CC65 binary: ./Arduino/cpu_wrapper_SA/program.bin\n");
-            if((fp_bin = fopen("./Arduino/cpu_wrapper_SA/program.bin", "rb"))==0)
+            printf("CC65 Binary File:");
+            for ( int byte=getchar(), i=0; (byte!='\n') && (i<126); byte=getchar(), i++ )
             {
-                printf("Fail to open cc65 binary file:./Arduino/cpu_wrapper_SA/program.bin\n");
+                putchar( byte );
+                szBinFile[i] = (char)byte;
+                szBinFile[i+1] = '\0';
+            }
+            
+            printf("\nDownloading CC65 binary: %s\n", szBinFile);
+            if((fp_bin = fopen(szBinFile, "rb"))==0)
+            {
+                printf("\nFail to open cc65 binary file:%s\n", szBinFile);
+                tx[0] = 0x00;
+                while(write(fd, &tx, 1)<=0) usleep(1);
+                while(read(fd, &rx, 1)<=0)  usleep(1);
+                while(write(fd, &tx, 1)<=0) usleep(1);
+                while(read(fd, &rx, 1)<=0)  usleep(1);
+                while(write(fd, &tx, 1)<=0) usleep(1);
+                while(read(fd, &rx, 1)<=0)  usleep(1);
+                while(write(fd, &tx, 1)<=0) usleep(1);
+                while(read(fd, &rx, 1)<=0)  usleep(1);
                 continue;
             }
 
