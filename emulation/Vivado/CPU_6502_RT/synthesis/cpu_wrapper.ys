@@ -1,7 +1,7 @@
 ### Yosys taargetting Xilinx
-read_verilog ../../../../source/ALU.v
+read_verilog -DEMU_MONITOR ../../../cpu_wrapper_RT.v
 read_verilog ../../../../source/cpu.v
-read_verilog ../../../cpu_wrapper_RT.v
+read_verilog ../../../../source/ALU8.v
 
 hierarchy -check -top cpu_wrapper
 

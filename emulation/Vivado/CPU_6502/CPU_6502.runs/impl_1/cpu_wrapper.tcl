@@ -140,7 +140,7 @@ OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   read_verilog /home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/CPU_6502/synthesis/cpu_wrapper.v
 OPTRACE "read constraints: implementation" START { }
-  read_xdc /home/goodkook/ETRI050_DesignKit/devel/Ref_Design/FIR8/1_Parallel_IO/emulation/Vivado/fir_pe_wrapper.srcs/constrs_1/imports/digilent-xdc-master/Arty-A7-100-Master.xdc
+  read_xdc /home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/CPU_6502/CPU_6502.srcs/constrs_1/imports/digilent-xdc-master/Arty-A7-100-Master.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "read constraints: implementation_pre" START { }
 OPTRACE "read constraints: implementation_pre" END { }

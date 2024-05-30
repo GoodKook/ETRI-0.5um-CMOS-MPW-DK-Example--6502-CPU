@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2023.2.2 (lin64) Build 4126759 Thu Feb  8 23:52:05 MST 2024
-| Date             : Mon May 27 22:48:29 2024
+| Date             : Wed May 29 23:14:36 2024
 | Host             : GoodKook-Skull running 64-bit Ubuntu 20.04.6 LTS
 | Command          : report_power -file cpu_wrapper_power_routed.rpt -pb cpu_wrapper_power_summary_routed.pb -rpx cpu_wrapper_power_routed.rpx
 | Design           : cpu_wrapper
@@ -53,15 +53,15 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        4 |       --- |             --- |
-| Slice Logic    |    <0.001 |      999 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      508 |     63400 |            0.80 |
-|   F7/F8 Muxes  |    <0.001 |       82 |     63400 |            0.13 |
-|   CARRY4       |    <0.001 |       17 |     15850 |            0.11 |
-|   Register     |    <0.001 |      271 |    126800 |            0.21 |
+| Slice Logic    |    <0.001 |     1006 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      509 |     63400 |            0.80 |
+|   F7/F8 Muxes  |    <0.001 |       88 |     63400 |            0.14 |
+|   CARRY4       |    <0.001 |       15 |     15850 |            0.09 |
+|   Register     |    <0.001 |      265 |    126800 |            0.21 |
 |   Others       |     0.000 |        4 |       --- |             --- |
-| Signals        |    <0.001 |      862 |       --- |             --- |
+| Signals        |    <0.001 |      858 |       --- |             --- |
 | Block RAM      |    <0.001 |       16 |       135 |           11.85 |
-| I/O            |    <0.001 |       30 |       210 |           14.29 |
+| I/O            |    <0.001 |       25 |       210 |           11.90 |
 | Static Power   |     0.098 |          |           |                 |
 | Total          |     0.099 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
@@ -140,10 +140,8 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+-------------+-----------+
-| Name        | Power (W) |
-+-------------+-----------+
-| cpu_wrapper |     0.001 |
-+-------------+-----------+
++------+-----------+
+| Name | Power (W) |
++------+-----------+
 
 

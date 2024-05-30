@@ -2,96 +2,87 @@
 // Co-Emulation warapper for CPU_6502
 // (Memory-Embeded)
 //
-
-module cpu_wrapper(Data_In, Data_Out, Addr, IO_Req, load_emu, get_emu, clk_emu, clk_dut, clk_LED);
-    input  [7:0] Data_In;
-    output [7:0] Data_Out;
-    input  [7:0] Addr;
-    output IO_Req;
-    input  load_emu, get_emu, clk_emu;
-    input  clk_dut;
+`ifdef EMU_MONITOR
+module cpu_wrapper(Din_emu, Dout_emu, Addr_emu, load_emu, get_emu, IO_Req, clk_emu, clk_dut, clk_LED);
+`else
+module cpu_wrapper(Din_emu, Dout_emu, Addr_emu, load_emu, get_emu, IO_Req, clk_emu, clk_dut);
+`endif
+    input  [7:0]    Din_emu;
+    output [7:0]    Dout_emu;
+    input  [2:0]    Addr_emu;
+    input           load_emu, get_emu, clk_emu;
+    output          IO_Req;
+    input           clk_dut;
+`ifdef EMU_MONITOR
     output clk_LED;
-
-    wire [15:0]  AB;
-    wire [7:0]   DO;
-    wire [7:0]   DI;
-    wire         WE;
-
-    reg [7:0] Data_Out;
-
-    // Stimulus & Output capture for DUT
-    reg [7:0]   stimIn_0, stimIn_1, stimIn_2, stimIn_3, stimIn_4;
-    reg [7:0]   vectOut_0, vectOut_1, vectOut_2, vectOut_3, vectOut_4;
-    // DUT interface
-    reg         reset;  // reset signal
-    reg [15:0]  AB;     // address bus
-    reg [7:0]   DI_P;   // data in, read bus
-    reg         WE;     // write enable
-    reg         IRQ;    // interrupt request
-    reg         NMI;    // non-maskable interrupt request
-    reg         RDY;    // Ready signal. Pauses CPU when RDY=0 
-    // Memory Emulation
-    reg Mem_Emu_Ena;
-    reg Mem_Emu_Wen;
-    reg [15:0]  Mem_Emu_Adr;
-    reg [ 7:0]  Mem_Emu_Din;
-    reg [ 7:0]  Mem_Emu_Dout;
-    
-    // Emulation Transactor
-    always @(posedge clk_emu)
-    begin
-        if (load_emu)   // Input stimulus to DUT
-        begin
-            reset <= stimIn_0[0];
-            IRQ   <= stimIn_0[1];
-            NMI   <= stimIn_0[2];
-            RDY   <= stimIn_0[3];
-            DI_P  <= stimIn_1;
-            // Memory Emulation
-            Mem_Emu_Ena       <= stimIn_0[4];
-            Mem_Emu_Wen       <= stimIn_0[5];
-            Mem_Emu_Adr[15:8] <= stimIn_2;
-            Mem_Emu_Adr[ 7:0] <= stimIn_3;
-            Mem_Emu_Din       <= stimIn_4;
-        end
-        else if (get_emu)   // Capure output from DUT
-        begin
-            vectOut_0    <= AB[15:8];
-            vectOut_1    <= AB[7:0];
-            vectOut_2    <= DO;
-            vectOut_3[0] <= WE;
-            vectOut_4    <= Mem_Emu_Dout;
-        end
-        else
-        begin
-            case( Addr )
-            0: stimIn_0 <= Data_In;
-            1: stimIn_1 <= Data_In;
-            2: stimIn_2 <= Data_In;
-            3: stimIn_3 <= Data_In;
-            4: stimIn_4 <= Data_In;
-            endcase
-            
-            case( Addr )
-            0: Data_Out <= vectOut_0;
-            1: Data_Out <= vectOut_1;
-            2: Data_Out <= vectOut_2;
-            3: Data_Out <= vectOut_3;
-            4: Data_Out <= vectOut_4;
-            endcase
-        end
-    end
-
-    // This is for blinking LED
-    reg [9:0] counter;
+    // Monitoring emulation process by blinking LED
+    reg [3:0] counter;
     always @(posedge clk_dut)
     begin
         counter <= counter + 1;
     end
-    // Read-back DUT output
-    assign clk_LED = counter[9];   // Monitor emulation process
+    assign clk_LED = counter[3];
+`endif
+
+    // Emulation wrapper: Stimulus & Output capture for DUT
+    parameter   NUM_STIM_ARRAY  = 5,
+                NUM_OUT_ARRAY   = 5;
+    reg [7:0]   stimIn[NUM_STIM_ARRAY];
+    reg [7:0]   vectOut[NUM_OUT_ARRAY];
+    reg [7:0]   Dout_emu;
+    // DUT interface: registered input
+    reg  [7:0]  DI;     // data in, read bus
+    reg  [7:0]  DI_P;   // data in, read bus
+    reg         IRQ;    // interrupt request
+    reg         NMI;    // non-maskable interrupt request
+    reg         RDY;    // Ready signal. Pauses CPU when RDY=0 
+    reg         reset;  // reset signal
+    // DUT interface: output wire. DUT's output will be captured
+    wire [15:0] AB;     // Address Bus
+    wire        WE;     // write enable
+    wire [7:0]  DO;     // data out, write bus
+
+    // Signals for FPGA Embedded Memory Emulation
+    reg         Mem_Emu_Ena;
+    reg         Mem_Emu_Wen;
+    reg  [15:0] Mem_Emu_Adr;
+    reg  [ 7:0] Mem_Emu_Din;
+    wire [ 7:0] Mem_Emu_Dout;
     
-    // DUT
+    // Emulation Transactor ---------------------------------------------
+    always @(posedge clk_emu)
+    begin
+        if (load_emu)   // Input stimulus to DUT
+        begin
+            reset <= stimIn[0][0];
+            IRQ   <= stimIn[0][1];
+            NMI   <= stimIn[0][2];
+            RDY   <= stimIn[0][3];
+            DI_P  <= stimIn[1];
+            // Memory Emulation
+            Mem_Emu_Ena       <= stimIn[0][4];
+            Mem_Emu_Wen       <= stimIn[0][5];
+            Mem_Emu_Adr[15:8] <= stimIn[2];
+            Mem_Emu_Adr[ 7:0] <= stimIn[3];
+            Mem_Emu_Din       <= stimIn[4];
+        end
+        else if (get_emu)   // Capure output from DUT
+        begin
+            vectOut[0]    <= AB[15:8];
+            vectOut[1]    <= AB[7:0];
+            vectOut[2]    <= DO;
+            vectOut[3]     = WE;
+            vectOut[3][0] <= WE;
+            vectOut[4]    <= Mem_Emu_Dout;
+        end
+        else
+        begin
+            stimIn[Addr_emu] <= Din_emu;    // stimulus: Host -> DUT
+            Dout_emu <= vectOut[Addr_emu];  // output vector: DUT->Host
+        end
+    end
+
+    // DUT --------------------------------------------------------------
     cpu u_cpu (
         .clk(clk_dut),
         .reset(reset),
@@ -433,3 +424,4 @@ module cpu_wrapper(Data_In, Data_Out, Addr, IO_Req, load_emu, get_emu, clk_emu, 
     end
     
 endmodule
+

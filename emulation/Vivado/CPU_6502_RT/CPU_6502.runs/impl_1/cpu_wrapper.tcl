@@ -122,8 +122,8 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param chipscope.maxJobs 1
-  set_param runs.launchOptions { -jobs 1  }
+  set_param chipscope.maxJobs 2
+  set_param runs.launchOptions { -jobs 4  }
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7a100tcsg324-1
   set_property board_part_repo_paths {/home/goodkook/.Xilinx/Vivado/2023.2.2/xhub/board_store/xilinx_board_store} [current_project]

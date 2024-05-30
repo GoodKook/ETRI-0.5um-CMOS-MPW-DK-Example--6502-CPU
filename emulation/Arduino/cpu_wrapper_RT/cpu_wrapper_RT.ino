@@ -21,38 +21,76 @@ inline int digitalReadDirect(int pin)
 //#define PRINT_MEMORY_RW
 #define DELAY_MICROS    0
 
+//----------------------------------------------------
+#define SIPEED_TANG_25K_BOARD
+//#define ARTY_A7_100T_BOARD
+
+#ifdef ARTY_A7_100T_BOARD
+//--------------------------------------------------------------------
+// FPGA Emulator Pin-Map for Digilent's A7-100T(Xilinx)
+//--------------------------------------------------------------------
+#define PIN_IO_REQ      22
 #define PIN_GET_EMU     26
 #define PIN_LOAD_EMU    28
 #define PIN_CLK_EMU     29
 #define PIN_CLK_DUT     24
-#define PIN_IO_REQ      27
 
-#define PIN_DATA_IN_0   36
-#define PIN_DATA_IN_1   34
-#define PIN_DATA_IN_2   32
-#define PIN_DATA_IN_3   30
-#define PIN_DATA_IN_4   37
-#define PIN_DATA_IN_5   35
-#define PIN_DATA_IN_6   33
-#define PIN_DATA_IN_7   31
+#define PIN_ADDR_EMU_0  27
+#define PIN_ADDR_EMU_1  25
+#define PIN_ADDR_EMU_2  23
 
-#define PIN_DATA_OUT_0  44
-#define PIN_DATA_OUT_1  42
-#define PIN_DATA_OUT_2  40
-#define PIN_DATA_OUT_3  38
-#define PIN_DATA_OUT_4  45
-#define PIN_DATA_OUT_5  43
-#define PIN_DATA_OUT_6  41
-#define PIN_DATA_OUT_7  39
+#define PIN_DIN_EMU_0   36
+#define PIN_DIN_EMU_1   34
+#define PIN_DIN_EMU_2   32
+#define PIN_DIN_EMU_3   30
+#define PIN_DIN_EMU_4   37
+#define PIN_DIN_EMU_5   35
+#define PIN_DIN_EMU_6   33
+#define PIN_DIN_EMU_7   31
 
-#define PIN_ADDR_0      52
-#define PIN_ADDR_1      50
-#define PIN_ADDR_2      48
-#define PIN_ADDR_3      46
-#define PIN_ADDR_4      53
-#define PIN_ADDR_5      51
-#define PIN_ADDR_6      49
-#define PIN_ADDR_7      47
+#define PIN_DOUT_EMU_0  44
+#define PIN_DOUT_EMU_1  42
+#define PIN_DOUT_EMU_2  40
+#define PIN_DOUT_EMU_3  38
+#define PIN_DOUT_EMU_4  45
+#define PIN_DOUT_EMU_5  43
+#define PIN_DOUT_EMU_6  41
+#define PIN_DOUT_EMU_7  39
+
+#endif // ARTY_A7_100T_BOARD
+
+//---------------------------------------------
+// Pin-Map for PiSPEED's TANG-25K Board (GOWIN)
+#ifdef SIPEED_TANG_25K_BOARD
+
+#define PIN_IO_REQ      37  // J6-12|JC-7
+#define PIN_LOAD_EMU    36  // J6-11|JC-1
+#define PIN_GET_EMU     35  // J6-10|JC-8
+#define PIN_ADDR_EMU_2  34  // J6-9 |JC-2
+#define PIN_ADDR_EMU_1  33  // J6-8 |JC-9
+#define PIN_ADDR_EMU_0  32  // J6-7 |JC-3
+#define PIN_CLK_EMU     31  // J6-6 |JC-10
+#define PIN_CLK_DUT     30  // J6-5 |JC-4
+
+#define PIN_DIN_EMU_7   45  // J5-12|JB-7
+#define PIN_DIN_EMU_6   44  // J5-11|JB-1
+#define PIN_DIN_EMU_5   43  // J5-10|JB-8
+#define PIN_DIN_EMU_4   42  // J5-9 |JB-2
+#define PIN_DIN_EMU_3   41  // J5-8 |JB-9
+#define PIN_DIN_EMU_2   40  // J5-7 |JB-3
+#define PIN_DIN_EMU_1   39  // J5-6 |JB-10
+#define PIN_DIN_EMU_0   38  // J5-5 |JB-4
+
+#define PIN_DOUT_EMU_7  53  // J4-12|JA-7
+#define PIN_DOUT_EMU_6  52  // J4-11|JA-1
+#define PIN_DOUT_EMU_5  51  // J4-10|JA-8
+#define PIN_DOUT_EMU_4  50  // J4-9 |JA-2
+#define PIN_DOUT_EMU_3  49  // J4-8 |JA-9
+#define PIN_DOUT_EMU_2  48  // J4-7 |JA-3
+#define PIN_DOUT_EMU_1  47  // J4-6 |JA-10
+#define PIN_DOUT_EMU_0  46  // J4-5 |JA-4
+
+#endif  // SIPEED_TANG_25K_BOARD
 
 //--------------------------------------------------------------------
 void establishContact()
@@ -102,33 +140,28 @@ void setup()
   pinMode(PIN_CLK_DUT  , OUTPUT);   digitalWriteDirect(PIN_CLK_DUT  , LOW);
   pinMode(PIN_IO_REQ   , INPUT);
 
-  pinMode(PIN_DATA_IN_0, OUTPUT);   digitalWriteDirect(PIN_DATA_IN_0, LOW);
-  pinMode(PIN_DATA_IN_1, OUTPUT);   digitalWriteDirect(PIN_DATA_IN_1, LOW);
-  pinMode(PIN_DATA_IN_2, OUTPUT);   digitalWriteDirect(PIN_DATA_IN_2, LOW);
-  pinMode(PIN_DATA_IN_3, OUTPUT);   digitalWriteDirect(PIN_DATA_IN_3, LOW);
-  pinMode(PIN_DATA_IN_4, OUTPUT);   digitalWriteDirect(PIN_DATA_IN_4, LOW);
-  pinMode(PIN_DATA_IN_5, OUTPUT);   digitalWriteDirect(PIN_DATA_IN_5, LOW);
-  pinMode(PIN_DATA_IN_6, OUTPUT);   digitalWriteDirect(PIN_DATA_IN_6, LOW);
-  pinMode(PIN_DATA_IN_7, OUTPUT);   digitalWriteDirect(PIN_DATA_IN_7, LOW);
+  pinMode(PIN_DIN_EMU_0, OUTPUT);   digitalWriteDirect(PIN_DIN_EMU_0, LOW);
+  pinMode(PIN_DIN_EMU_1, OUTPUT);   digitalWriteDirect(PIN_DIN_EMU_1, LOW);
+  pinMode(PIN_DIN_EMU_2, OUTPUT);   digitalWriteDirect(PIN_DIN_EMU_2, LOW);
+  pinMode(PIN_DIN_EMU_3, OUTPUT);   digitalWriteDirect(PIN_DIN_EMU_3, LOW);
+  pinMode(PIN_DIN_EMU_4, OUTPUT);   digitalWriteDirect(PIN_DIN_EMU_4, LOW);
+  pinMode(PIN_DIN_EMU_5, OUTPUT);   digitalWriteDirect(PIN_DIN_EMU_5, LOW);
+  pinMode(PIN_DIN_EMU_6, OUTPUT);   digitalWriteDirect(PIN_DIN_EMU_6, LOW);
+  pinMode(PIN_DIN_EMU_7, OUTPUT);   digitalWriteDirect(PIN_DIN_EMU_7, LOW);
   
-  pinMode(PIN_ADDR_0, OUTPUT);      digitalWriteDirect(PIN_ADDR_0, LOW);
-  pinMode(PIN_ADDR_1, OUTPUT);      digitalWriteDirect(PIN_ADDR_1, LOW);
-  pinMode(PIN_ADDR_2, OUTPUT);      digitalWriteDirect(PIN_ADDR_2, LOW);
-  pinMode(PIN_ADDR_3, OUTPUT);      digitalWriteDirect(PIN_ADDR_3, LOW);
-  pinMode(PIN_ADDR_4, OUTPUT);      digitalWriteDirect(PIN_ADDR_4, LOW);
-  pinMode(PIN_ADDR_5, OUTPUT);      digitalWriteDirect(PIN_ADDR_5, LOW);
-  pinMode(PIN_ADDR_6, OUTPUT);      digitalWriteDirect(PIN_ADDR_6, LOW);
-  pinMode(PIN_ADDR_7, OUTPUT);      digitalWriteDirect(PIN_ADDR_7, LOW);
+  pinMode(PIN_ADDR_EMU_0, OUTPUT);  digitalWriteDirect(PIN_ADDR_EMU_0, LOW);
+  pinMode(PIN_ADDR_EMU_1, OUTPUT);  digitalWriteDirect(PIN_ADDR_EMU_1, LOW);
+  pinMode(PIN_ADDR_EMU_2, OUTPUT);  digitalWriteDirect(PIN_ADDR_EMU_2, LOW);
 
   // Set digital pins to input connecting FPGA's OUTPUT
-  pinMode(PIN_DATA_OUT_0, INPUT);
-  pinMode(PIN_DATA_OUT_1, INPUT);
-  pinMode(PIN_DATA_OUT_2, INPUT);
-  pinMode(PIN_DATA_OUT_3, INPUT);
-  pinMode(PIN_DATA_OUT_4, INPUT);
-  pinMode(PIN_DATA_OUT_5, INPUT);
-  pinMode(PIN_DATA_OUT_6, INPUT);
-  pinMode(PIN_DATA_OUT_7, INPUT);
+  pinMode(PIN_DOUT_EMU_0, INPUT);
+  pinMode(PIN_DOUT_EMU_1, INPUT);
+  pinMode(PIN_DOUT_EMU_2, INPUT);
+  pinMode(PIN_DOUT_EMU_3, INPUT);
+  pinMode(PIN_DOUT_EMU_4, INPUT);
+  pinMode(PIN_DOUT_EMU_5, INPUT);
+  pinMode(PIN_DOUT_EMU_6, INPUT);
+  pinMode(PIN_DOUT_EMU_7, INPUT);
 
   // Monitoring LED
   pinMode(LED_BUILTIN, OUTPUT);
@@ -145,40 +178,35 @@ uint8_t rxBuf[N_RX], txBuf[N_TX];
 inline void Set_EMU_Address(uint8_t address)
 {
   // Address
-  digitalWriteDirect(PIN_ADDR_0, address & 0x01);
-  digitalWriteDirect(PIN_ADDR_1, address & 0x02);
-  digitalWriteDirect(PIN_ADDR_2, address & 0x04);
-//  digitalWriteDirect(PIN_ADDR_3, address & 0x08);
-//  digitalWriteDirect(PIN_ADDR_4, address & 0x10);
-//  digitalWriteDirect(PIN_ADDR_5, address & 0x20);
-//  digitalWriteDirect(PIN_ADDR_6, address & 0x40);
-//  digitalWriteDirect(PIN_ADDR_7, address & 0x80);
+  digitalWriteDirect(PIN_ADDR_EMU_0, address & 0x01);
+  digitalWriteDirect(PIN_ADDR_EMU_1, address & 0x02);
+  digitalWriteDirect(PIN_ADDR_EMU_2, address & 0x04);
 }
 // Write Data to Emulation wrapper
 inline void Set_EMU_Data(uint8_t data)
 {
   // Data
-  digitalWriteDirect(PIN_DATA_IN_0, data & 0x01);
-  digitalWriteDirect(PIN_DATA_IN_1, data & 0x02);
-  digitalWriteDirect(PIN_DATA_IN_2, data & 0x04);
-  digitalWriteDirect(PIN_DATA_IN_3, data & 0x08);
-  digitalWriteDirect(PIN_DATA_IN_4, data & 0x10);
-  digitalWriteDirect(PIN_DATA_IN_5, data & 0x20);
-  digitalWriteDirect(PIN_DATA_IN_6, data & 0x40);
-  digitalWriteDirect(PIN_DATA_IN_7, data & 0x80);
+  digitalWriteDirect(PIN_DIN_EMU_0, data & 0x01);
+  digitalWriteDirect(PIN_DIN_EMU_1, data & 0x02);
+  digitalWriteDirect(PIN_DIN_EMU_2, data & 0x04);
+  digitalWriteDirect(PIN_DIN_EMU_3, data & 0x08);
+  digitalWriteDirect(PIN_DIN_EMU_4, data & 0x10);
+  digitalWriteDirect(PIN_DIN_EMU_5, data & 0x20);
+  digitalWriteDirect(PIN_DIN_EMU_6, data & 0x40);
+  digitalWriteDirect(PIN_DIN_EMU_7, data & 0x80);
 }
 // Read Data from Emulation wrapper
 inline uint8_t Get_EMU_Data()
 {
   uint8_t ret;
-  ret = (digitalReadDirect(PIN_DATA_OUT_0)? 0x01 : 0x00) |
-        (digitalReadDirect(PIN_DATA_OUT_1)? 0x02 : 0x00) |
-        (digitalReadDirect(PIN_DATA_OUT_2)? 0x04 : 0x00) |
-        (digitalReadDirect(PIN_DATA_OUT_3)? 0x08 : 0x00) |
-        (digitalReadDirect(PIN_DATA_OUT_4)? 0x10 : 0x00) |
-        (digitalReadDirect(PIN_DATA_OUT_5)? 0x20 : 0x00) |
-        (digitalReadDirect(PIN_DATA_OUT_6)? 0x40 : 0x00) |
-        (digitalReadDirect(PIN_DATA_OUT_7)? 0x80 : 0x00);
+  ret = (digitalReadDirect(PIN_DOUT_EMU_0)? 0x01 : 0x00) |
+        (digitalReadDirect(PIN_DOUT_EMU_1)? 0x02 : 0x00) |
+        (digitalReadDirect(PIN_DOUT_EMU_2)? 0x04 : 0x00) |
+        (digitalReadDirect(PIN_DOUT_EMU_3)? 0x08 : 0x00) |
+        (digitalReadDirect(PIN_DOUT_EMU_4)? 0x10 : 0x00) |
+        (digitalReadDirect(PIN_DOUT_EMU_5)? 0x20 : 0x00) |
+        (digitalReadDirect(PIN_DOUT_EMU_6)? 0x40 : 0x00) |
+        (digitalReadDirect(PIN_DOUT_EMU_7)? 0x80 : 0x00);
   return ret;
 }
 // Clocking for Emulation wrapper
