@@ -24,5 +24,7 @@ Additionally, QuestaSim Intel FPGA Starter edition for netlist post-simulation.
 Layout: </br>
 ![CPU6502_Layout](https://github.com/GoodKook/ETRI-0.5um-CMOS-MPW-DK-Example--6502-CPU/assets/162967523/4a969c71-ed33-4e52-9924-476165eebf3f)
 
-Co-Emulation
+Co-Emulation </br>
+![My SCE-MI](https://github.com/GoodKook/ETRI-0.5um-CMOS-MPW-DK-Example--6502-CPU/blob/main/emulation/_Docs_/My_SCE_MI_v4.png)
+
 
