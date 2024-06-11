@@ -321,12 +321,6 @@ void loop()
     Machine_Clock_Rise(0);
     Machine_Clock_Fall(0);
   }
-  //while(true)
-  //{
-  //  digitalWriteDirect(PIN_CLK_DUT, HIGH);
-  //  //Serial.available();
-  //  digitalWriteDirect(PIN_CLK_DUT, LOW);
-  //}
 }
 
 inline void Machine_Clock_Rise(uint8_t Ctrl)

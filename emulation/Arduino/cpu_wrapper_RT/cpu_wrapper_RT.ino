@@ -347,12 +347,6 @@ void loop()
     Machine_Clock_Rise(0);
     Machine_Clock_Fall(0);
   }
-  //while(true)
-  //{
-  //  digitalWriteDirect(PIN_CLK_DUT, HIGH);
-  //  //Serial.available();
-  //  digitalWriteDirect(PIN_CLK_DUT, LOW);
-  //}
 }
 
 uint8_t _PIA_DSP_REG, _PIA_DSP_CTL, _PIA_KBD_REG, _PIA_KBD_CTL, _BIN_FILE_LOAD;

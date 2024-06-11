@@ -8,7 +8,7 @@ Revision History: Jan. 5, 2024
 #define _VCPU_H_
 
 #include "systemc.h"
-#include "CPU_6502.h"
+#include "cpu_wrapper.h"
 
 /*******************************************************************************
 Purpose: SystemC interface wrapper compatible with VERILATOR generated SC module
@@ -35,7 +35,7 @@ SC_MODULE(Vcpu)
     sc_signal<bool>         _NMI;
     sc_signal<bool>         _RDY;
 
-    CPU_6502*   u_CPU_6502;
+    cpu_wrapper*   u_cpu_wrapper;
 
     void eval()
     {
@@ -75,17 +75,17 @@ SC_MODULE(Vcpu)
         sensitive << _WE;
 
         // Verilog model instantiation
-        u_CPU_6502 = new CPU_6502("u_CPU_6502");
+        u_cpu_wrapper = new cpu_wrapper("u_cpu_wrapper");
         // Binding
-        u_CPU_6502->clk(_clk);
-        u_CPU_6502->reset(_reset);
-        u_CPU_6502->DI(_DI);
-        u_CPU_6502->DO(_DO);
-        u_CPU_6502->WE(_WE);
-        u_CPU_6502->IRQ(_IRQ);
-        u_CPU_6502->NMI(_NMI);
-        u_CPU_6502->RDY(_RDY);
-        u_CPU_6502->AB(_AB);
+        u_cpu_wrapper->clk(_clk);
+        u_cpu_wrapper->reset(_reset);
+        u_cpu_wrapper->DI(_DI);
+        u_cpu_wrapper->DO(_DO);
+        u_cpu_wrapper->WE(_WE);
+        u_cpu_wrapper->IRQ(_IRQ);
+        u_cpu_wrapper->NMI(_NMI);
+        u_cpu_wrapper->RDY(_RDY);
+        u_cpu_wrapper->AB(_AB);
     }
 };
 

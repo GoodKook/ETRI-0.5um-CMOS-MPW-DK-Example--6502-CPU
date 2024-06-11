@@ -66,6 +66,8 @@ int main()
                 putchar('\n');
             else
                 putchar(buf[0]);
+            
+            fflush(stdout);
         }
         n = 0;
     }
