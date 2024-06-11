@@ -20,23 +20,35 @@ SC_DEFS		=	CR_LF_CR
 TOP_MODULE   = cpu
 
 all :
-	@echo 'Makefile for CPU_6502 Co-Emulation: Verilog RTL is implemented into FPGA and'
-	@echo '	   warapped with Arduino and simulate under SystemC Testbench'
+	@echo 'Makefile for CPU_6502 Co-Emulation: Verilog RTL[+] is implemented into FPGA[-] and'
+	@echo '	                   warapped with Arduino and'
+	@echo '                    simulated under SystemC Testbench(Cycle-Accurate)'
 	@echo ''
 	@echo '    make build'
-	@echo '        Builds executable of "cpu" with Verilated RTL and SystemC TB, and'
+	@echo '        Builds executable of "cpu" with Cycle-Accurate SystemC TB, and'
 	@echo '          linux pipe app(fifo): "std_input", "std_output" for IO system.'
-	@echo ''
 	@echo '    make run'
-	@echo '        Default firmware: "./Apple-1/program.bin"'
-	@echo ''
+	@echo '        Simulate at Cycle-Accurate level. Use PSCE API(Arduino) "cpu_wrapper"'
+	@echo '        Default 6502 firmware: "./Apple-1/program.bin"'
 	@echo '    make wave'
-	@echo ''
+	@echo '        View SystemC TB generated waveform'
 	@echo '    make clean'
 	@echo '        Clean working folder'
 	@echo ''
 	@echo 'CPU_6502 Stand-Alone:'
 	@echo '    make standalone'
+	@echo '        Choose one of PSCE API[*](Arduino DUE) option:'
+	@echo '            1. "cpu_wrapper_SA", memory & PIA in Arduino, running @~20Khz'
+	@echo '            2. "cpu_wrapper_RT", memory in FPGA & PIA in Arduino, running @~200Khz'
+	@echo ''
+	@echo 'CPU_6502 Real-Time:'
+	@echo '    make realtime'
+	@echo '        "cpu_wrapper_RT2", memory & PIA in FPGA, running @~56Mhz(PWM)'
+	@echo ''
+	@echo ' [+] Arlet-6502, https://github.com/Arlet/verilog-6502'
+	@echo ' [-] Tested FPGA: Xilinx Artix-7(Digilent ARTY A7), Gowin GW5A-25K(SiPEED TANG Premier 25K)'
+	@echo ' [*] PSCE is Poorman`s Standard Co-Emulation by GoodKook, goodkook@gmail.com'
+	@echo '             available at http://github.com/GoodKook'
 	@echo ''
 
 build : $(TOP_MODULE) std_input std_output
@@ -65,8 +77,14 @@ run : $(TOP_MODULE) std_input std_output
 standalone : CPU_6502_SA
 	./CPU_6502_SA
 
+realtime : CPU_6502_RT2
+	./CPU_6502_RT2
+
 CPU_6502_SA : CPU_6502_SA.cpp
 	g++ -o CPU_6502_SA CPU_6502_SA.cpp
+
+CPU_6502_RT2 : CPU_6502_RT2.cpp
+	g++ -o CPU_6502_RT2 CPU_6502_RT2.cpp
 
 wave : sc_CPU_6502.vcd
 	gtkwave sc_CPU_6502.vcd --save=sc_CPU_6502.gtkw &
@@ -77,6 +95,7 @@ clean :
 	rm -f std_input
 	rm -f std_output
 	rm -f CPU_6502_SA
+	rm -f CPU_6502_RT2
 	rm -f CPU_terminal
 	rm -f *.vcd
 	rm -f *.fifo
