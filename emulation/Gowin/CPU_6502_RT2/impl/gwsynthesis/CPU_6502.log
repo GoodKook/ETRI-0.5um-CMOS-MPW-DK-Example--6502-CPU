@@ -1,0 +1,56 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file '/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Gowin/CPU_6502_RT2/synthesis/cpu_wrapper.v'
+Compiling module 'cpu_wrapper'("/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Gowin/CPU_6502_RT2/synthesis/cpu_wrapper.v":5)
+NOTE  (EX0101) : Current top module is "cpu_wrapper"
+WARN  (EX0346) : Instance "Memory.0.0" 's parameter value "1'b0" truncated to "2'b00" to fit 2 bits("/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Gowin/CPU_6502_RT2/synthesis/cpu_wrapper.v":23858)
+WARN  (EX0346) : Instance "Memory.0.1" 's parameter value "1'b0" truncated to "2'b00" to fit 2 bits("/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Gowin/CPU_6502_RT2/synthesis/cpu_wrapper.v":23957)
+WARN  (EX0346) : Instance "Memory.0.10" 's parameter value "1'b0" truncated to "2'b00" to fit 2 bits("/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Gowin/CPU_6502_RT2/synthesis/cpu_wrapper.v":24039)
+WARN  (EX0346) : Instance "Memory.0.11" 's parameter value "1'b0" truncated to "2'b00" to fit 2 bits("/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Gowin/CPU_6502_RT2/synthesis/cpu_wrapper.v":24121)
+WARN  (EX0346) : Instance "Memory.0.12" 's parameter value "1'b0" truncated to "2'b00" to fit 2 bits("/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Gowin/CPU_6502_RT2/synthesis/cpu_wrapper.v":24203)
+WARN  (EX0346) : Instance "Memory.0.13" 's parameter value "1'b0" truncated to "2'b00" to fit 2 bits("/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Gowin/CPU_6502_RT2/synthesis/cpu_wrapper.v":24285)
+WARN  (EX0346) : Instance "Memory.0.14" 's parameter value "1'b0" truncated to "2'b00" to fit 2 bits("/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Gowin/CPU_6502_RT2/synthesis/cpu_wrapper.v":24367)
+WARN  (EX0346) : Instance "Memory.0.15" 's parameter value "1'b0" truncated to "2'b00" to fit 2 bits("/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Gowin/CPU_6502_RT2/synthesis/cpu_wrapper.v":24449)
+WARN  (EX0346) : Instance "Memory.0.16" 's parameter value "1'b0" truncated to "2'b00" to fit 2 bits("/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Gowin/CPU_6502_RT2/synthesis/cpu_wrapper.v":24531)
+WARN  (EX0346) : Instance "Memory.0.17" 's parameter value "1'b0" truncated to "2'b00" to fit 2 bits("/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Gowin/CPU_6502_RT2/synthesis/cpu_wrapper.v":24633)
+WARN  (EX0346) : Instance "Memory.0.18" 's parameter value "1'b0" truncated to "2'b00" to fit 2 bits("/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Gowin/CPU_6502_RT2/synthesis/cpu_wrapper.v":24735)
+WARN  (EX0346) : Instance "Memory.0.19" 's parameter value "1'b0" truncated to "2'b00" to fit 2 bits("/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Gowin/CPU_6502_RT2/synthesis/cpu_wrapper.v":24837)
+WARN  (EX0346) : Instance "Memory.0.2" 's parameter value "1'b0" truncated to "2'b00" to fit 2 bits("/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Gowin/CPU_6502_RT2/synthesis/cpu_wrapper.v":24919)
+WARN  (EX0346) : Instance "Memory.0.20" 's parameter value "1'b0" truncated to "2'b00" to fit 2 bits("/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Gowin/CPU_6502_RT2/synthesis/cpu_wrapper.v":25001)
+WARN  (EX0346) : Instance "Memory.0.21" 's parameter value "1'b0" truncated to "2'b00" to fit 2 bits("/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Gowin/CPU_6502_RT2/synthesis/cpu_wrapper.v":25103)
+WARN  (EX0346) : Instance "Memory.0.22" 's parameter value "1'b0" truncated to "2'b00" to fit 2 bits("/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Gowin/CPU_6502_RT2/synthesis/cpu_wrapper.v":25205)
+WARN  (EX0346) : Instance "Memory.0.23" 's parameter value "1'b0" truncated to "2'b00" to fit 2 bits("/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Gowin/CPU_6502_RT2/synthesis/cpu_wrapper.v":25287)
+WARN  (EX0346) : Instance "Memory.0.24" 's parameter value "1'b0" truncated to "2'b00" to fit 2 bits("/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Gowin/CPU_6502_RT2/synthesis/cpu_wrapper.v":25369)
+WARN  (EX0346) : Instance "Memory.0.25" 's parameter value "1'b0" truncated to "2'b00" to fit 2 bits("/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Gowin/CPU_6502_RT2/synthesis/cpu_wrapper.v":25451)
+WARN  (EX0346) : Instance "Memory.0.26" 's parameter value "1'b0" truncated to "2'b00" to fit 2 bits("/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Gowin/CPU_6502_RT2/synthesis/cpu_wrapper.v":25533)
+WARN  (EX0346) : Instance "Memory.0.27" 's parameter value "1'b0" truncated to "2'b00" to fit 2 bits("/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Gowin/CPU_6502_RT2/synthesis/cpu_wrapper.v":25615)
+WARN  (EX0346) : Instance "Memory.0.28" 's parameter value "1'b0" truncated to "2'b00" to fit 2 bits("/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Gowin/CPU_6502_RT2/synthesis/cpu_wrapper.v":25706)
+WARN  (EX0346) : Instance "Memory.0.29" 's parameter value "1'b0" truncated to "2'b00" to fit 2 bits("/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Gowin/CPU_6502_RT2/synthesis/cpu_wrapper.v":25788)
+WARN  (EX0346) : Instance "Memory.0.3" 's parameter value "1'b0" truncated to "2'b00" to fit 2 bits("/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Gowin/CPU_6502_RT2/synthesis/cpu_wrapper.v":25887)
+WARN  (EX0346) : Instance "Memory.0.30" 's parameter value "1'b0" truncated to "2'b00" to fit 2 bits("/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Gowin/CPU_6502_RT2/synthesis/cpu_wrapper.v":25969)
+WARN  (EX0346) : Instance "Memory.0.31" 's parameter value "1'b0" truncated to "2'b00" to fit 2 bits("/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Gowin/CPU_6502_RT2/synthesis/cpu_wrapper.v":26071)
+WARN  (EX0346) : Instance "Memory.0.4" 's parameter value "1'b0" truncated to "2'b00" to fit 2 bits("/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Gowin/CPU_6502_RT2/synthesis/cpu_wrapper.v":26191)
+WARN  (EX0346) : Instance "Memory.0.5" 's parameter value "1'b0" truncated to "2'b00" to fit 2 bits("/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Gowin/CPU_6502_RT2/synthesis/cpu_wrapper.v":26290)
+WARN  (EX0346) : Instance "Memory.0.6" 's parameter value "1'b0" truncated to "2'b00" to fit 2 bits("/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Gowin/CPU_6502_RT2/synthesis/cpu_wrapper.v":26389)
+WARN  (EX0346) : Instance "Memory.0.7" 's parameter value "1'b0" truncated to "2'b00" to fit 2 bits("/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Gowin/CPU_6502_RT2/synthesis/cpu_wrapper.v":26488)
+WARN  (EX0346) : Instance "Memory.0.8" 's parameter value "1'b0" truncated to "2'b00" to fit 2 bits("/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Gowin/CPU_6502_RT2/synthesis/cpu_wrapper.v":26587)
+WARN  (EX0346) : Instance "Memory.0.9" 's parameter value "1'b0" truncated to "2'b00" to fit 2 bits("/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Gowin/CPU_6502_RT2/synthesis/cpu_wrapper.v":26669)
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Gowin/CPU_6502_RT2/impl/gwsynthesis/CPU_6502.vg" completed
+[100%] Generate report file "/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Gowin/CPU_6502_RT2/impl/gwsynthesis/CPU_6502_syn.rpt.html" completed
+GowinSynthesis finish
