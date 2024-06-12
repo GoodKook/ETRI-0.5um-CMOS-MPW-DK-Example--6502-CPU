@@ -156,6 +156,7 @@ void CPU_SendKeyboard(unsigned char KbdBuff)
     for (int i=0; i<N_RX; i++)  rxPack[i] = 0x00;
 
     txPack[0] = CPU_RDY | DSP_RD;
+    txPack[1] = KbdBuff | 0x80;
     TransactEmulator(txPack, rxPack);
     
     usleep(1);
@@ -164,6 +165,113 @@ void CPU_SendKeyboard(unsigned char KbdBuff)
     txPack[1] = KbdBuff | 0x80;
     TransactEmulator(txPack, rxPack);
 }
+
+void CPU_ReadyOn()
+{
+    unsigned char txPack[N_TX], rxPack[N_RX];
+
+    for (int i=0; i<N_TX; i++)  txPack[i] = 0x00;
+    for (int i=0; i<N_RX; i++)  rxPack[i] = 0x00;
+
+    txPack[0] = CPU_RDY | DSP_RD | KBD_WR;  // Run CPU
+    TransactEmulator(txPack, rxPack);
+}
+
+void CPU_ReadyOff()
+{
+    unsigned char txPack[N_TX], rxPack[N_RX];
+
+    for (int i=0; i<N_TX; i++)  txPack[i] = 0x00;
+    for (int i=0; i<N_RX; i++)  rxPack[i] = 0x00;
+
+    txPack[0] = DSP_RD | KBD_WR;    // Hold CPU
+    TransactEmulator(txPack, rxPack);
+}
+
+//-----------------------------------------------------------
+// FPGA Emulator Input. See Verilog cou_wrapper_RT2.v
+//-----------------------------------------------------------
+//  reset  <= stimIn[0][0];
+//  IRQ    <= stimIn[0][1];
+//  NMI    <= stimIn[0][2];
+//  RDY    <= stimIn[0][3];
+//  Kbd_Wr <= stimIn[0][4];
+//  Dsp_Rd <= stimIn[0][5];
+//  Kbd_In <= stimIn[1];
+// Memory Emulation
+//  Mem_Emu_Ena       <= stimIn[2][0];
+//  Mem_Emu_Wen       <= stimIn[2][1];
+//  Mem_Emu_Clk       <= stimIn[2][2];
+//  Mem_Emu_Adr[15:8] <= stimIn[3];
+//  Mem_Emu_Adr[ 7:0] <= stimIn[4];
+//  Mem_Emu_Din       <= stimIn[5];
+//-----------------------------------------------------------
+// FPGA Emulator Input. See Verilog cou_wrapper_RT2.v
+//-----------------------------------------------------------
+//  vectOut[0]  <= Dsp_Reg_Out;
+//  vectOut[1]  <= Kbd_Reg_Out;
+//  vectOut[2]  <= Kbd_Ctl_Out;
+//  vectOut[3]  <= Mem_Emu_Dout;
+
+#define MEM_EMU_EN   0x01
+#define MEM_EMU_WEN  0x02
+#define MEM_EMU_CLK  0x04
+
+unsigned char CPU_MemoryRead(unsigned int Address)
+{
+    unsigned char txPack[N_TX], rxPack[N_RX];
+
+    for (int i=0; i<N_TX; i++)  txPack[i] = 0x00;
+    for (int i=0; i<N_RX; i++)  rxPack[i] = 0x00;
+
+    txPack[0] = DSP_RD | KBD_WR;    // Hold CPU
+    txPack[2] = MEM_EMU_EN;         // Enable Memory emulation
+    txPack[3] = (Address >> 8);     // Address[15:8]
+    txPack[4] = (Address & 0x00FF); // Address[ 7:0]
+    TransactEmulator(txPack, rxPack);
+    usleep(1);
+
+    txPack[2] = MEM_EMU_EN | MEM_EMU_CLK; // Memory emulation, Write enable, Clock
+    TransactEmulator(txPack, rxPack);
+    usleep(1);
+
+    txPack[2] = MEM_EMU_EN; // Memory emulation, Write enable, Clock
+    TransactEmulator(txPack, rxPack);
+    usleep(1);
+    
+    return rxPack[3];
+}
+
+unsigned char CPU_MemoryWrite(unsigned int Address, unsigned char byte)
+{
+    unsigned char txPack[N_TX], rxPack[N_RX];
+
+    for (int i=0; i<N_TX; i++)  txPack[i] = 0x00;
+    for (int i=0; i<N_RX; i++)  rxPack[i] = 0x00;
+
+    txPack[0] = DSP_RD | KBD_WR;    // Hold CPU
+    txPack[2] = MEM_EMU_EN;         // Enable Memory emulation
+    txPack[3] = (Address >> 8);     // Address[15:8]
+    txPack[4] = (Address & 0x00FF); // Address[ 7:0]
+    txPack[5] = byte;               // Din[ 7:0]
+    TransactEmulator(txPack, rxPack);
+    usleep(1);
+
+    txPack[2] = MEM_EMU_EN | MEM_EMU_WEN;   // Memory emulation, Write enable
+    TransactEmulator(txPack, rxPack);
+    usleep(1);
+
+    txPack[2] = MEM_EMU_EN | MEM_EMU_WEN | MEM_EMU_CLK; // Memory emulation, Write enable, Clock
+    TransactEmulator(txPack, rxPack);
+    usleep(1);
+
+    txPack[2] = MEM_EMU_EN; // Memory emulation, Write enable
+    TransactEmulator(txPack, rxPack);
+    usleep(1);
+    
+    return CPU_MemoryRead(Address);
+}
+
 //------------------------------------------------------------------------
 
 int kbhit(void)
@@ -211,23 +319,6 @@ void PrintHelp()
     printf("\t- Type 'q' for Exit\n");
 }
 
-char* List_Bin(void)
-{
-    DIR *d;
-    struct dirent *dir;
-    
-    d = opendir(".//Arduino//cpu_wrapper_SA");
-    if (d)
-    {
-        while ((dir = readdir(d)) != NULL)
-        {
-            printf("%s\n", dir->d_name);
-        }
-        closedir(d);
-    }
-    return(0);
-}
-
 int main(int argc, char* argv[])
 {
     if (ConnectEmulator()<0)    return -1;
@@ -240,6 +331,9 @@ int main(int argc, char* argv[])
 
     // -------------------------------------------------------------
     // Command-Line Loop
+    FILE *fp_bin;   // CC65 binary file
+    char szBinFile[128];
+
     unsigned char Disp, KbdBuff[8];
 
     printf("Going command-line......\n");
@@ -250,7 +344,8 @@ int main(int argc, char* argv[])
         {
             //printf("Reading display from Emulator......\n");
             Disp = CPU_ReadDisplay();
-            //printf("[0]%02X(%c)", rxPacket[0], rxPacket[0]);
+            //printf("[%02X(%c)]", Disp, Disp & 0x7F);
+            //fflush(stdout);
             if (Disp & 0x80)   // Something to display?
             {
                 if (Disp==0x8D) Disp  = '\n'; // CR ?
@@ -275,6 +370,66 @@ int main(int argc, char* argv[])
         else if (KbdBuff[0]=='h')    // Help
         {
             PrintHelp();
+            continue;
+        }
+        else if (KbdBuff[0]=='l')    // List binary file(s)
+        {
+            system("ls ./Apple-1/*.bin");
+            continue;
+        }
+        else if (KbdBuff[0]=='d')    // Download CC65 binary
+        {
+            unsigned int Address, Length;
+            unsigned char Hdr[6], tx, rx;
+            
+            CPU_ReadyOff(); // Hold CPU
+            
+            printf("CC65 Binary File:");
+            for ( int byte=getchar(), i=0; (byte!='\n') && (i<126); byte=getchar(), i++ )
+            {
+                putchar( byte );
+                szBinFile[i] = (char)byte;
+                szBinFile[i+1] = '\0';
+            }
+            
+            printf("\nDownloading CC65 binary: %s\n", szBinFile);
+            if((fp_bin = fopen(szBinFile, "rb"))==0)
+            {
+                printf("\nFail to open cc65 binary file:%s\n", szBinFile);
+                continue;
+            }
+
+            if (fread(Hdr, sizeof(unsigned char), 4, fp_bin)!=4)
+            {
+                printf("\nFail to read Binary Header\n");
+                fclose(fp_bin);
+                continue;
+            }
+            else
+            {
+                Address = ((unsigned int)Hdr[1]<<8)|(unsigned int)Hdr[0];
+                Length  = ((unsigned int)Hdr[3]<<8)|(unsigned int)Hdr[2];
+                printf("Address=%04X, Length=%04X\n", Address, Length);
+            }
+            
+            while(fread(&tx, sizeof(unsigned char), 1, fp_bin)>=1)   // Read a byte from CC65 binary file
+            {
+                rx = CPU_MemoryWrite(Address, tx);
+                printf("%02X ", rx);
+                fflush(stdout);
+                Address++;
+            }
+            fclose(fp_bin);
+
+            CPU_MemoryWrite(0, 0x20);
+            CPU_MemoryWrite(1, Hdr[0]);
+            CPU_MemoryWrite(2, Hdr[1]);
+            CPU_MemoryWrite(3, 0x20);
+            CPU_MemoryWrite(4, 0x00);
+            CPU_MemoryWrite(5, 0xFF);
+            
+            CPU_ReadyOn(); // Restart CPU
+            CPU_Resetting();
             continue;
         }
         else if (islower((int)KbdBuff[0]))
