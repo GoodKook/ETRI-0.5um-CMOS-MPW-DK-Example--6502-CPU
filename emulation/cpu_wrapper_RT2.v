@@ -103,7 +103,7 @@ module cpu_wrapper(Din_emu, Dout_emu, Addr_emu, load_emu, get_emu, IO_Req, clk_e
         .NMI(NMI),
         .RDY(RDY) );
 
-    // In/Out Control
+    // In/Out Control ---------------------------------------------------
 `define PIA_KBD_REG     16'hD010
 `define PIA_KBD_CTL     16'hD011
 `define PIA_DSP_REG     16'hD012
@@ -116,21 +116,22 @@ module cpu_wrapper(Din_emu, Dout_emu, Addr_emu, load_emu, get_emu, IO_Req, clk_e
     begin
         if (reset)
         begin
-            Kbd_Reg_Sel <= 0;
-            Kbd_Ctl_Sel <= 0;
-            Dsp_Reg_Sel <= 0;
+            Kbd_Reg_Sel <= 1'b0;
+            Kbd_Ctl_Sel <= 1'b0;
+            Dsp_Reg_Sel <= 1'b0;
         end
         else
         begin
-            if (AB==`PIA_KBD_REG)   Kbd_Reg_Sel <= 1;
-            else                    Kbd_Reg_Sel <= 0;
-            if (AB==`PIA_KBD_CTL)   Kbd_Ctl_Sel <= 1;
-            else                    Kbd_Ctl_Sel <= 0;
-            if (AB==`PIA_DSP_REG)   Dsp_Reg_Sel <= 1;
-            else                    Dsp_Reg_Sel <= 0;
+            if (AB==`PIA_KBD_REG)   Kbd_Reg_Sel <= 1'b1;
+            else                    Kbd_Reg_Sel <= 1'b0;
+            if (AB==`PIA_KBD_CTL)   Kbd_Ctl_Sel <= 1'b1;
+            else                    Kbd_Ctl_Sel <= 1'b0;
+            if (AB==`PIA_DSP_REG)   Dsp_Reg_Sel <= 1'b1;
+            else                    Dsp_Reg_Sel <= 1'b0;
         end
     end
 
+    // Mux'ing DI Bus ---------------------------------------------------
     always @*
     begin
         // DI select
@@ -140,72 +141,91 @@ module cpu_wrapper(Din_emu, Dout_emu, Addr_emu, load_emu, get_emu, IO_Req, clk_e
         else                    DI = DI_M;
     end
 
-    reg Dsp_Rd0, Dsp_Rd1, Clr_Dsp_Reg;
+    // FSM for Display Register ----------------------------------------------
+    parameter sReady        = 4'b0001;
+    parameter sWaitDspAck   = 4'b0010;
+    parameter sCheckDspAcc  = 4'b0100;
+    reg [3:0]   state;
+    reg [7:0]   Dsp_Reg;
     always @(posedge clk_dut or posedge reset)
-    begin
-        if (reset)
+    begin : FSM_STATE
+        if(reset)
         begin
-            Dsp_Rd0     <= 0;
-            Dsp_Rd1     <= 0;
-            Clr_Dsp_Reg <= 0;
+            state <= sReady;
+            Dsp_Reg <= 0;
         end
-        else
-        begin
-            Dsp_Rd0 <= Dsp_Rd;
-            Dsp_Rd1 <= Dsp_Rd0;
-            if (Dsp_Rd0 && !Dsp_Rd1)    // Single-Shot
-                Clr_Dsp_Reg <= 1;
-            else
-                Clr_Dsp_Reg <= 0;
+        else begin
+            case(state)
+                sReady:
+                begin
+                    if (AB==`PIA_DSP_REG && WE)
+                    begin
+                        Dsp_Reg <= DO;
+                        state <= sWaitDspAck;
+                    end
+                    else
+                        state <= sReady;
+                end
+                sWaitDspAck:
+                    if (Dsp_Rd)
+                        state <= sCheckDspAcc;
+                    else
+                        state <= sWaitDspAck;
+                sCheckDspAcc:
+                    if (!Dsp_Rd)
+                    begin
+                        Dsp_Reg <= 0;
+                        state <= sReady;
+                    end
+                    else
+                        state <= sCheckDspAcc;
+                default:
+                    state <= sReady;
+            endcase
         end
     end
 
+    // Keyboard interface (Single-shot control) -------------------------
     reg Kbd_Wr0, Kbd_Wr1, Set_Kbd_Ctl;
     always @(posedge clk_dut or posedge reset)
     begin
         if (reset)
         begin
-            Kbd_Wr0     <= 0;
-            Kbd_Wr1     <= 0;
-            Set_Kbd_Ctl <= 0;
+            Kbd_Wr0     <= 1'b0;
+            Kbd_Wr1     <= 1'b0;
+            Set_Kbd_Ctl <= 1'b0;
         end
         else
         begin
             Kbd_Wr0 <= Kbd_Wr;
             Kbd_Wr1 <= Kbd_Wr0;
-            if (Kbd_Wr0 && !Kbd_Wr1)    // Single-Shot
-                Set_Kbd_Ctl <= 1;
+            if (!Kbd_Wr1 && Kbd_Wr0)    // Single-Shot @ Rising-edge
+                Set_Kbd_Ctl <= 1'b1;
             else
-                Set_Kbd_Ctl <= 0;
+                Set_Kbd_Ctl <= 1'b0;
         end
     end
 
-    // Display & Keyboard Register
-    reg [7:0]   Dsp_Reg;
+    // Keyboard Register --------------------------------------
     reg [7:0]   Kbd_Reg, Kbd_Ctl;
     always @(posedge clk_dut or posedge reset)
     begin
         if (reset)
         begin
-            Dsp_Reg <= 0;
-            Kbd_Reg <= 0;
-            Kbd_Ctl <= 0;
+            Kbd_Reg <= 8'b0000_0000;
+            Kbd_Ctl <= 8'b0000_0000;
         end
         else
         begin
-            if (Clr_Dsp_Reg)
-                Dsp_Reg[7] = 0;
-            else if (AB==`PIA_DSP_REG && WE)
-                Dsp_Reg <= DO;
-    
+            // Keyboard Register
             if (Set_Kbd_Ctl)
             begin
-                Kbd_Ctl[7] <= 1;
+                Kbd_Ctl[7] <= 1'b1;
                 Kbd_Reg <= Kbd_In;
             end
             else if (AB==`PIA_KBD_REG && !WE)
             begin
-                Kbd_Ctl[7] <= 0;
+                Kbd_Ctl[7] <= 1'b0;
             end
         end
     end

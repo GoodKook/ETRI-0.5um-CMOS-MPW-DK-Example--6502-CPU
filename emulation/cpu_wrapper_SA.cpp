@@ -64,23 +64,6 @@ void PrintHelp()
     printf("\t- Type 'q' for Exit\n");
 }
 
-char* List_Bin(void)
-{
-    DIR *d;
-    struct dirent *dir;
-    
-    d = opendir(".//Arduino//cpu_wrapper_SA");
-    if (d)
-    {
-        while ((dir = readdir(d)) != NULL)
-        {
-            printf("%s\n", dir->d_name);
-        }
-        closedir(d);
-    }
-    return(0);
-}
-
 int main(int argc, char* argv[])
 {
     // Arduino Serial IF

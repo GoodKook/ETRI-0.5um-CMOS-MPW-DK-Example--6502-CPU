@@ -103,91 +103,6 @@ void TransactEmulator(unsigned char* txPacket, unsigned char* rxPacket)
     }
 }
 
-void CPU_Resetting()
-{
-    unsigned char txPack[N_TX], rxPack[N_RX];
-
-    for (int i=0; i<N_TX; i++)  txPack[i] = 0x00;
-    for (int i=0; i<N_RX; i++)  rxPack[i] = 0x00;
-
-    txPack[0] = CPU_RDY | CPU_RST | DSP_RD | KBD_WR;
-    TransactEmulator(txPack, rxPack);
-    usleep(1);
-
-    txPack[0] = CPU_RDY | DSP_RD | KBD_WR;
-    TransactEmulator(txPack, rxPack);
-    usleep(1);
-}
-
-unsigned char CPU_ReadDisplay()
-{
-    unsigned char txPack[N_TX], rxPack[N_RX];
-
-    for (int i=0; i<N_TX; i++)  txPack[i] = 0x00;
-    for (int i=0; i<N_RX; i++)  rxPack[i] = 0x00;
-
-    txPack[0] = CPU_RDY | DSP_RD | KBD_WR;
-    TransactEmulator(txPack, rxPack);
-    
-    return rxPack[0];
-}
-
-void CPU_AckDisplay()
-{
-    unsigned char txPack[N_TX], rxPack[N_RX];
-
-    for (int i=0; i<N_TX; i++)  txPack[i] = 0x00;
-    for (int i=0; i<N_RX; i++)  rxPack[i] = 0x00;
-
-    txPack[0] = CPU_RDY | KBD_WR;
-    TransactEmulator(txPack, rxPack);
-    
-    usleep(1);
-    
-    txPack[0] = CPU_RDY | DSP_RD | KBD_WR;
-    TransactEmulator(txPack, rxPack);
-}
-
-void CPU_SendKeyboard(unsigned char KbdBuff)
-{
-    unsigned char txPack[N_TX], rxPack[N_RX];
-
-    for (int i=0; i<N_TX; i++)  txPack[i] = 0x00;
-    for (int i=0; i<N_RX; i++)  rxPack[i] = 0x00;
-
-    txPack[0] = CPU_RDY | DSP_RD;
-    txPack[1] = KbdBuff | 0x80;
-    TransactEmulator(txPack, rxPack);
-    
-    usleep(1);
-    
-    txPack[0] = CPU_RDY | DSP_RD | KBD_WR;
-    txPack[1] = KbdBuff | 0x80;
-    TransactEmulator(txPack, rxPack);
-}
-
-void CPU_ReadyOn()
-{
-    unsigned char txPack[N_TX], rxPack[N_RX];
-
-    for (int i=0; i<N_TX; i++)  txPack[i] = 0x00;
-    for (int i=0; i<N_RX; i++)  rxPack[i] = 0x00;
-
-    txPack[0] = CPU_RDY | DSP_RD | KBD_WR;  // Run CPU
-    TransactEmulator(txPack, rxPack);
-}
-
-void CPU_ReadyOff()
-{
-    unsigned char txPack[N_TX], rxPack[N_RX];
-
-    for (int i=0; i<N_TX; i++)  txPack[i] = 0x00;
-    for (int i=0; i<N_RX; i++)  rxPack[i] = 0x00;
-
-    txPack[0] = DSP_RD | KBD_WR;    // Hold CPU
-    TransactEmulator(txPack, rxPack);
-}
-
 //-----------------------------------------------------------
 // FPGA Emulator Input. See Verilog cou_wrapper_RT2.v
 //-----------------------------------------------------------
@@ -269,7 +184,7 @@ unsigned char CPU_MemoryWrite(unsigned int Address, unsigned char byte)
     TransactEmulator(txPack, rxPack);
     usleep(1);
     
-    return CPU_MemoryRead(Address);
+    return byte;    //CPU_MemoryRead(Address);
 }
 
 //------------------------------------------------------------------------
@@ -313,8 +228,7 @@ void PrintHelp()
     printf("\t    PRHEX:   location FFE5, Print least 4-bit(HEX) in ACC register\n");
     printf("\t    ENTRY:   location FF00, Monitor Entry\n");
     printf("\t    * Op-code: JSR=$20 / LDA=$A9\n");
-    printf("\t- Access memory address DO18 to download cc65 binary\n");
-    printf("\t- Press 'd' to start download at prompting \"D018: \"\n");
+    printf("\t- Type 'd' to download CC65 binary\n");
     printf("\t- Type 'h' for Help\n");
     printf("\t- Type 'q' for Exit\n");
 }
@@ -323,11 +237,6 @@ int main(int argc, char* argv[])
 {
     if (ConnectEmulator()<0)    return -1;
     PrintHelp();
-
-    // Reset DUT
-    printf("Resetting......\n");
-    CPU_Resetting();
-    usleep(1);
 
     // -------------------------------------------------------------
     // Command-Line Loop
@@ -342,26 +251,20 @@ int main(int argc, char* argv[])
         // Keyboard input
         while (!kbhit())
         {
-            //printf("Reading display from Emulator......\n");
-            Disp = CPU_ReadDisplay();
-            //printf("[%02X(%c)]", Disp, Disp & 0x7F);
-            //fflush(stdout);
-            if (Disp & 0x80)   // Something to display?
+            if(read(fd, &Disp, 1)>=1)
             {
-                if (Disp==0x8D) Disp  = '\n'; // CR ?
-                else            Disp &= 0x7F;
+                //printf("[%02X(%c)]", Disp, Disp & 0x7F);
+                //fflush(stdout);
+                if (Disp==0x0D) Disp  = '\n'; // CR ?
                 putchar(Disp);
                 fflush(stdout);
-                usleep(1);
-
-                //printf("Acknowledge Display......\n");
-                CPU_AckDisplay();
             }
+            usleep(10);
         }
         KbdBuff[0] = getchar();
         KbdBuff[1] = '\0';
 
-        if (KbdBuff[0]==0x0A)   KbdBuff[0] = 0x8D;  // CR
+        if (KbdBuff[0]==0x0A)   KbdBuff[0] = 0x0D;  // CR
         else if (KbdBuff[0]=='q')    // Exit
         {
             close(fd);
@@ -379,11 +282,6 @@ int main(int argc, char* argv[])
         }
         else if (KbdBuff[0]=='d')    // Download CC65 binary
         {
-            unsigned int Address, Length;
-            unsigned char Hdr[6], tx, rx;
-            
-            CPU_ReadyOff(); // Hold CPU
-            
             printf("CC65 Binary File:");
             for ( int byte=getchar(), i=0; (byte!='\n') && (i<126); byte=getchar(), i++ )
             {
@@ -399,44 +297,51 @@ int main(int argc, char* argv[])
                 continue;
             }
 
-            if (fread(Hdr, sizeof(unsigned char), 4, fp_bin)!=4)
-            {
-                printf("\nFail to read Binary Header\n");
-                fclose(fp_bin);
-                continue;
-            }
-            else
-            {
-                Address = ((unsigned int)Hdr[1]<<8)|(unsigned int)Hdr[0];
-                Length  = ((unsigned int)Hdr[3]<<8)|(unsigned int)Hdr[2];
-                printf("Address=%04X, Length=%04X\n", Address, Length);
-            }
+            unsigned char tx, rx, len[4];
+            unsigned int  nLength;
             
-            while(fread(&tx, sizeof(unsigned char), 1, fp_bin)>=1)   // Read a byte from CC65 binary file
+            // Switch to download mode
+            while(write(fd, KbdBuff, 1)<=0) usleep(1);
+            sleep(1);
+
+            // Read 4-Byte CC65 header
+            fread(len, sizeof(unsigned char), 4, fp_bin);
+            nLength = (unsigned int)len[3] * 256 + (unsigned int)len[2];
+            printf("Address=%02X%02X, Length=%04X\n", len[1], len[0], nLength);
+            // Send 4-Byte CC65 header
+            tx = len[0];    while(write(fd, &tx, 1)<=0) usleep(1);
+            tx = len[1];    while(write(fd, &tx, 1)<=0) usleep(1);
+            tx = len[2];    while(write(fd, &tx, 1)<=0) usleep(1);
+            tx = len[3];    while(write(fd, &tx, 1)<=0) usleep(1);
+            
+            for(int i=0; i<nLength; i++)
             {
-                rx = CPU_MemoryWrite(Address, tx);
-                printf("%02X ", rx);
+                if (fread(&tx, sizeof(unsigned char), 1, fp_bin)<=0)
+                {
+                    printf("File length mismatch\n");
+                    fclose(fp_bin);
+                    continue;
+                }
+
+                while(write(fd, &tx, 1)<=0) usleep(1);
+                while(read(fd, &rx, 1)<=0)  usleep(1);
+                if (tx!=rx)
+                {
+                    printf("\nDownload Error\n");
+                    fclose(fp_bin);
+                    continue;
+                }
+                else
+                    printf("%02X ", rx);
                 fflush(stdout);
-                Address++;
             }
             fclose(fp_bin);
-
-            CPU_MemoryWrite(0, 0x20);
-            CPU_MemoryWrite(1, Hdr[0]);
-            CPU_MemoryWrite(2, Hdr[1]);
-            CPU_MemoryWrite(3, 0x20);
-            CPU_MemoryWrite(4, 0x00);
-            CPU_MemoryWrite(5, 0xFF);
-            
-            CPU_ReadyOn(); // Restart CPU
-            CPU_Resetting();
-            continue;
         }
         else if (islower((int)KbdBuff[0]))
             continue;
 
         //printf("Writing Keyboard to Emulator......\n");
-        CPU_SendKeyboard(KbdBuff[0]);
+        while(write(fd, KbdBuff, 1)<=0)  usleep(1);
     }
     
     close(fd);
