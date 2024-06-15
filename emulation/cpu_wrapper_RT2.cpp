@@ -229,8 +229,14 @@ void PrintHelp()
     printf("\t    ENTRY:   location FF00, Monitor Entry\n");
     printf("\t    * Op-code: JSR=$20 / LDA=$A9\n");
     printf("\t- Type 'd' to download CC65 binary\n");
+    printf("\t- Type 'i' to download iHEX\n");
+    printf("\t- Type 'k' to download Keyboard\n");
     printf("\t- Type 'h' for Help\n");
     printf("\t- Type 'q' for Exit\n");
+}
+
+void File_List(char *Path)
+{
 }
 
 int main(int argc, char* argv[])
@@ -241,7 +247,7 @@ int main(int argc, char* argv[])
     // -------------------------------------------------------------
     // Command-Line Loop
     FILE *fp_bin;   // CC65 binary file
-    char szBinFile[128];
+    char szBinFile[128], szHexFile[128];
 
     unsigned char Disp, KbdBuff[8];
 
@@ -277,11 +283,12 @@ int main(int argc, char* argv[])
         }
         else if (KbdBuff[0]=='l')    // List binary file(s)
         {
-            system("ls ./Apple-1/*.bin");
+            system("ls ./Apple-1/*");
             continue;
         }
         else if (KbdBuff[0]=='d')    // Download CC65 binary
         {
+            system("ls ./Apple-1/*.bin");
             printf("CC65 Binary File:");
             for ( int byte=getchar(), i=0; (byte!='\n') && (i<126); byte=getchar(), i++ )
             {
@@ -336,6 +343,97 @@ int main(int argc, char* argv[])
                 fflush(stdout);
             }
             fclose(fp_bin);
+        }
+        else if (KbdBuff[0]=='i')    // Download iHEX
+        {
+            char szHexBuff[128];
+            unsigned char tx, rx;
+
+            system("ls ./Apple-1/*.hex");
+            printf("iHEX File:");
+            for ( int byte=getchar(), i=0; (byte!='\n') && (i<126); byte=getchar(), i++ )
+            {
+                putchar( byte );
+                szHexFile[i] = (char)byte;
+                szHexFile[i+1] = '\0';
+            }
+            
+            printf("\nDownloading iHEX: %s\n", szHexFile);
+            if((fp_bin = fopen(szHexFile, "r"))==0)
+            {
+                printf("\nFail to open iHEX file:%s\n", szHexFile);
+                continue;
+            }
+
+            // Switch to download mode
+            while(write(fd, KbdBuff, 1)<=0) usleep(1);
+            sleep(1);
+
+            while (true)
+            {
+                // Read line
+                if (fgets(szHexBuff, 128, fp_bin) == NULL) // EOF
+                {
+                    fclose(fp_bin);
+                    continue;
+                }
+
+                for (int i=0; i<=strlen(szHexBuff); i++)
+                {
+                    tx = szHexBuff[i];
+                    while(write(fd, &tx, 1)<=0) usleep(1);
+                }
+
+                for (int i=0; i<(((szHexBuff[1]&0x0F)*16) + (szHexBuff[2]&0x0F)); i++)
+                {
+                    while(read(fd, &rx, 1)<=0)  usleep(1);
+                    printf("%02X ", rx);
+                    fflush(stdout);
+                }
+            }
+        }
+        else if (KbdBuff[0]=='k')    // Download Key input
+        {
+            char            line[128], *result;
+            unsigned char   rx, tx;
+            int             len;
+            
+            system("ls ./Apple-1/*.txt");
+            printf("Keyboard Sequence TXT file:");
+            for ( int byte=getchar(), i=0; (byte!='\n') && (i<126); byte=getchar(), i++ )
+            {
+                putchar( byte );
+                szHexFile[i] = (char)byte;
+                szHexFile[i+1] = '\0';
+            }
+
+            if((fp_bin = fopen(szHexFile, "r"))==0)
+            {
+                printf("\nFail to open TXT file:%s\n", szHexFile);
+                continue;
+            }
+            
+            printf("\n");
+            while ((result = fgets(line, 128, fp_bin)) != NULL)
+            {
+                len = strlen(result);
+                result[len-1] = 0x0D;
+                result[len] = '\0';
+                
+                for (int i=0; i<len; i++)
+                {
+
+                    tx = result[i];
+                    while(write(fd, &tx, 1)<=0) usleep(10);
+                    while(read(fd, &rx, 1)<=0)  usleep(10);
+                    //printf("%c", rx);
+                    //fflush(stdout);
+                }
+                sleep(1);
+                printf(".");
+                fflush(stdout);
+            }
+            continue;
         }
         else if (islower((int)KbdBuff[0]))
             continue;
