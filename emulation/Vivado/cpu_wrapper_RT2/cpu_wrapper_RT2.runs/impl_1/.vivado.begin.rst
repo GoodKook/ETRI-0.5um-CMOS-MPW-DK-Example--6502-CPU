@@ -1,20 +1,5 @@
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="goodkook" Host="GoodKook-Skull" Pid="4800" HostCore="8" HostMemory="16338976">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="goodkook" Host="GoodKook-Skull" Pid="192976" HostCore="8" HostMemory="16338976">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="goodkook" Host="GoodKook-Skull" Pid="258817" HostCore="8" HostMemory="16338976">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="goodkook" Host="GoodKook-Skull" Pid="458224" HostCore="8" HostMemory="16338976">
+    <Process Command="vivado" Owner="goodkook" Host="GoodKook-Skull" Pid="12557" HostCore="8" HostMemory="16338972">
     </Process>
 </ProcessHandle>

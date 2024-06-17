@@ -105,6 +105,7 @@ clean :
 	rm -f *.fifo
 	rm -f ./Vivado/cpu_wrapper/vivado*
 	rm -f ./Vivado/cpu_wrapper_RT/vivado*
+	rm -f ./Vivado/cpu_wrapper_RT2/vivado*
 
 debug : $(TOP_MODULE)
 	ddd $(TOP_MODULE)

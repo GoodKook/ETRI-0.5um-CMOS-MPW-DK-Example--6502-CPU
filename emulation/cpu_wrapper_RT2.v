@@ -141,47 +141,106 @@ module cpu_wrapper(Din_emu, Dout_emu, Addr_emu, load_emu, get_emu, IO_Req, clk_e
         else                    DI = DI_M;
     end
 
-    // FSM for Display Register ----------------------------------------------
-    parameter sReady        = 2'b01;
-    parameter sWaitDspAck   = 2'b10;
-    reg [3:0]   state;
-    reg [7:0]   Dsp_Reg;
+//    // FSM for Display Register ----------------------------------------------
+//    parameter sReady        = 2'b01;
+//    parameter sWaitDspAck   = 2'b10;
+//    reg [3:0]   state;
+//    reg [7:0]   Dsp_Reg;
+//    always @(posedge clk_dut or posedge reset)
+//    begin : FSM_STATE
+//        if(reset)
+//        begin
+//            state <= sReady;
+//            Dsp_Reg <= 0;
+//        end
+//        else begin
+//            case(state)
+//                sReady:
+//                begin
+//                    if (AB==`PIA_DSP_REG && WE)
+//                    begin
+//                        Dsp_Reg <= DO;
+//                        state <= sReady;
+//                    end
+//                    else if (Dsp_Rd)
+//                    begin
+//                        state <= sWaitDspAck;
+//                    end
+//                    else
+//                        state <= sReady;
+//                end
+//                sWaitDspAck:
+//                    if (AB!=`PIA_DSP_REG && !Dsp_Rd)
+//                    begin
+//                        Dsp_Reg <= 0;
+//                        state <= sReady;
+//                    end
+//                    else
+//                        state <= sWaitDspAck;
+//                default:
+//                    state <= sReady;
+//            endcase
+//        end
+//    end
+
+    // Display interface (Single-shot control) -------------------------
+    reg Dsp_Rd0, Dsp_Rd1, Dsp_Clr_Ctl;
     always @(posedge clk_dut or posedge reset)
-    begin : FSM_STATE
-        if(reset)
+    begin
+        if (reset)
         begin
-            state <= sReady;
-            Dsp_Reg <= 0;
+            Dsp_Rd0     <= 1'b0;
+            Dsp_Rd1     <= 1'b0;
+            Dsp_Clr_Ctl <= 1'b0;
         end
-        else begin
-            case(state)
-                sReady:
-                begin
-                    if (AB==`PIA_DSP_REG && WE)
-                    begin
-                        Dsp_Reg <= DO;
-                        state <= sReady;
-                    end
-                    else if (Dsp_Rd)
-                    begin
-                        state <= sWaitDspAck;
-                    end
-                    else
-                        state <= sReady;
-                end
-                sWaitDspAck:
-                    if (AB!=`PIA_DSP_REG && !Dsp_Rd)
-                    begin
-                        Dsp_Reg <= 0;
-                        state <= sReady;
-                    end
-                    else
-                        state <= sWaitDspAck;
-                default:
-                    state <= sReady;
-            endcase
+        else
+        begin
+            Dsp_Rd0 <= Dsp_Rd;
+            Dsp_Rd1 <= Dsp_Rd0;
+            if (!Dsp_Rd1 && Dsp_Rd0)    // Single-Shot @ Rising-edge
+                Dsp_Clr_Ctl <= 1'b1;
+            else
+                Dsp_Clr_Ctl <= 1'b0;
         end
     end
+
+    // Display Register --------------------------------------
+    reg [7:0]   Dsp_Reg;
+    always @(posedge clk_dut or posedge reset)
+    begin
+        if (reset)
+        begin
+            Dsp_Reg <= 0;
+        end
+        else
+        begin
+            if (Dsp_Clr_Ctl)
+            begin
+                Dsp_Reg <= 0;
+            end
+            else if (AB==`PIA_DSP_REG && WE)
+            begin
+                Dsp_Reg <= DO;
+            end
+        end
+    end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     // Keyboard interface (Single-shot control) -------------------------
     reg Kbd_Wr0, Kbd_Wr1, Set_Kbd_Ctl;

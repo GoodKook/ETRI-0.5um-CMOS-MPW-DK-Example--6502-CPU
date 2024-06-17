@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2.2 (lin64) Build 4126759 Thu Feb  8 23:52:05 MST 2024
-| Date         : Mon Jun 17 22:44:01 2024
+| Date         : Tue Jun 18 06:40:48 2024
 | Host         : GoodKook-Skull running 64-bit Ubuntu 20.04.6 LTS
 | Command      : report_drc -file cpu_wrapper_drc_opted.rpt -pb cpu_wrapper_drc_opted.pb -rpx cpu_wrapper_drc_opted.rpx
 | Design       : cpu_wrapper
@@ -55,102 +55,102 @@ Related violations: <none>
 
 REQP-1839#1 Warning
 RAMB36 async control check  
-The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[14] (net: _Address[14]) which is driven by a register (_1486_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[14] (net: _Address[14]) which is driven by a register (_1490_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#2 Warning
 RAMB36 async control check  
-The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[14] (net: _Address[14]) which is driven by a register (_1501_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[14] (net: _Address[14]) which is driven by a register (_1505_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#3 Warning
 RAMB36 async control check  
-The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[14] (net: _Address[14]) which is driven by a register (_1511_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[14] (net: _Address[14]) which is driven by a register (_1515_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#4 Warning
 RAMB36 async control check  
-The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[14] (net: _Address[14]) which is driven by a register (_1578_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[14] (net: _Address[14]) which is driven by a register (_1582_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#5 Warning
 RAMB36 async control check  
-The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1336_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1339_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#6 Warning
 RAMB36 async control check  
-The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1437_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1438_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#7 Warning
 RAMB36 async control check  
-The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1441_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1445_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#8 Warning
 RAMB36 async control check  
-The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1442_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1446_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#9 Warning
 RAMB36 async control check  
-The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1443_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1447_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#10 Warning
 RAMB36 async control check  
-The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1451_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1455_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#11 Warning
 RAMB36 async control check  
-The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1481_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1485_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#12 Warning
 RAMB36 async control check  
-The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1482_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1486_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#13 Warning
 RAMB36 async control check  
-The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1483_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1487_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#14 Warning
 RAMB36 async control check  
-The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1484_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1488_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#15 Warning
 RAMB36 async control check  
-The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1485_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1489_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#16 Warning
 RAMB36 async control check  
-The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1486_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1490_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#17 Warning
 RAMB36 async control check  
-The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1502_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1506_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#18 Warning
 RAMB36 async control check  
-The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1512_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1516_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#19 Warning
 RAMB36 async control check  
-The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1579_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1583_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#20 Warning
 RAMB36 async control check  
-The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1615_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1619_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 
