@@ -1,0 +1,1273 @@
+
+*** Running vivado
+    with args -log cpu_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source cpu_wrapper.tcl -notrace
+
+
+****** Vivado v2023.2.2 (64-bit)
+  **** SW Build 4126759 on Thu Feb  8 23:52:05 MST 2024
+  **** IP Build 4126054 on Fri Feb  9 11:39:09 MST 2024
+  **** SharedData Build 4115275 on Tue Jan 30 00:40:57 MST 2024
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source cpu_wrapper.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1318.820 ; gain = 0.023 ; free physical = 10589 ; free virtual = 16774
+Command: link_design -top cpu_wrapper -part xc7a100tcsg324-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+Removing all libraries
+analyzing package 'attributes'
+WARNING: [HDL 9-3792] port 'DBITERR' remains unconnected for this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:13841]
+WARNING: [HDL 9-5183] port 'CASCADEINA' is not connected on this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:13841]
+WARNING: [HDL 9-3792] port 'CASCADEOUTA' remains unconnected for this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:14007]
+WARNING: [HDL 9-5183] port 'DIPADIP' is not connected on this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:14007]
+WARNING: [HDL 9-3792] port 'DBITERR' remains unconnected for this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:14175]
+WARNING: [HDL 9-5183] port 'CASCADEINA' is not connected on this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:14175]
+WARNING: [HDL 9-3792] port 'CASCADEOUTA' remains unconnected for this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:14341]
+WARNING: [HDL 9-5183] port 'DIPADIP' is not connected on this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:14341]
+WARNING: [HDL 9-3792] port 'DBITERR' remains unconnected for this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:14509]
+WARNING: [HDL 9-5183] port 'CASCADEINA' is not connected on this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:14509]
+WARNING: [HDL 9-3792] port 'CASCADEOUTA' remains unconnected for this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:14675]
+WARNING: [HDL 9-5183] port 'DIPADIP' is not connected on this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:14675]
+WARNING: [HDL 9-3792] port 'DBITERR' remains unconnected for this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:14843]
+WARNING: [HDL 9-5183] port 'CASCADEINA' is not connected on this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:14843]
+WARNING: [HDL 9-3792] port 'CASCADEOUTA' remains unconnected for this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:15009]
+WARNING: [HDL 9-5183] port 'DIPADIP' is not connected on this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:15009]
+WARNING: [HDL 9-3792] port 'DBITERR' remains unconnected for this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:15177]
+WARNING: [HDL 9-5183] port 'CASCADEINA' is not connected on this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:15177]
+WARNING: [HDL 9-3792] port 'CASCADEOUTA' remains unconnected for this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:15343]
+WARNING: [HDL 9-5183] port 'DIPADIP' is not connected on this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:15343]
+WARNING: [HDL 9-3792] port 'DBITERR' remains unconnected for this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:15511]
+WARNING: [HDL 9-5183] port 'CASCADEINA' is not connected on this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:15511]
+WARNING: [HDL 9-3792] port 'CASCADEOUTA' remains unconnected for this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:15677]
+WARNING: [HDL 9-5183] port 'DIPADIP' is not connected on this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:15677]
+WARNING: [HDL 9-3792] port 'DBITERR' remains unconnected for this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:15845]
+WARNING: [HDL 9-5183] port 'CASCADEINA' is not connected on this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:15845]
+WARNING: [HDL 9-3792] port 'CASCADEOUTA' remains unconnected for this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:16011]
+WARNING: [HDL 9-5183] port 'DIPADIP' is not connected on this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:16011]
+WARNING: [HDL 9-3792] port 'DBITERR' remains unconnected for this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:16179]
+WARNING: [HDL 9-5183] port 'CASCADEINA' is not connected on this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:16179]
+WARNING: [HDL 9-3792] port 'CASCADEOUTA' remains unconnected for this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:16345]
+WARNING: [HDL 9-5183] port 'DIPADIP' is not connected on this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:16345]
+WARNING: [HDL 9-3617] input port 'CASCADEINA' is not connected on this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:13987]
+WARNING: [HDL 9-3617] input port 'DIPADIP[3]' is not connected on this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:14153]
+WARNING: [HDL 9-3617] input port 'CASCADEINA' is not connected on this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:14321]
+WARNING: [HDL 9-3617] input port 'DIPADIP[3]' is not connected on this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:14487]
+WARNING: [HDL 9-3617] input port 'CASCADEINA' is not connected on this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:14655]
+WARNING: [HDL 9-3617] input port 'DIPADIP[3]' is not connected on this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:14821]
+WARNING: [HDL 9-3617] input port 'CASCADEINA' is not connected on this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:14989]
+WARNING: [HDL 9-3617] input port 'DIPADIP[3]' is not connected on this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:15155]
+WARNING: [HDL 9-3617] input port 'CASCADEINA' is not connected on this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:15323]
+WARNING: [HDL 9-3617] input port 'DIPADIP[3]' is not connected on this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:15489]
+WARNING: [HDL 9-3617] input port 'CASCADEINA' is not connected on this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:15657]
+WARNING: [HDL 9-3617] input port 'DIPADIP[3]' is not connected on this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:15823]
+WARNING: [HDL 9-3617] input port 'CASCADEINA' is not connected on this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:15991]
+WARNING: [HDL 9-3617] input port 'DIPADIP[3]' is not connected on this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:16157]
+WARNING: [HDL 9-3617] input port 'CASCADEINA' is not connected on this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:16325]
+WARNING: [HDL 9-3617] input port 'DIPADIP[3]' is not connected on this instance [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:16491]
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10563]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10574]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10585]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10596]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10607]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10618]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10629]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10640]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10651]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10662]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10673]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10684]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10695]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10706]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10717]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10728]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10739]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10750]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10761]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10772]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10783]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10794]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10805]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10816]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10827]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10838]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10849]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10860]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10871]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10882]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10893]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10904]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10915]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10926]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10937]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10948]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10959]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10970]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10981]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:10992]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11003]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11014]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11025]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11036]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11047]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11058]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11069]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11080]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11091]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11102]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11113]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11124]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11135]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11146]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11157]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11168]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11179]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11190]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11201]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11212]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11223]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11234]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11245]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11256]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11267]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11278]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11289]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11300]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11311]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11322]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11333]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11344]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11355]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11366]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11377]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11388]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11399]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11410]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11421]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11432]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11443]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11454]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11465]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11476]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11487]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11498]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11509]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11520]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11531]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11542]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11553]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11564]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11575]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11586]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11597]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11608]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11619]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11630]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11641]
+Resolution: Please check the value of the property and set to a correct value.
+CRITICAL WARNING: [Netlist 29-72] Incorrect value '1'bx' specified for property 'INIT'. Expecting type 'binary' with possible values of '1'b0,1'b1'. The system will either use the default value or the property value will be dropped. Please verify your source files. [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/synthesis/cpu_wrapper.v:11652]
+Resolution: Please check the value of the property and set to a correct value.
+INFO: [Common 17-14] Message 'Netlist 29-72' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1659.703 ; gain = 0.000 ; free physical = 10229 ; free virtual = 16414
+INFO: [Netlist 29-17] Analyzing 173 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-43] Netlist 'cpu_wrapper' is not ideal for floorplanning, since the cellview 'cpu_wrapper' defined in file 'cpu_wrapper.v' contains large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/cpu_wrapper_RT2.srcs/constrs_1/imports/digilent-xdc-master/Arty-A7-100-Master.xdc]
+Finished Parsing XDC File [/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/cpu_wrapper_RT2.srcs/constrs_1/imports/digilent-xdc-master/Arty-A7-100-Master.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 1808.391 ; gain = 0.000 ; free physical = 10141 ; free virtual = 16325
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 6 instances were transformed.
+  INV => LUT1: 6 instances
+
+7 Infos, 49 Warnings, 100 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1808.426 ; gain = 489.605 ; free physical = 10141 ; free virtual = 16325
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.64 . Memory (MB): peak = 1898.172 ; gain = 89.746 ; free physical = 10111 ; free virtual = 16296
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: 1a92bb2b2
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2369.023 ; gain = 470.852 ; free physical = 9688 ; free virtual = 15873
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+Phase 1.1 Core Generation And Design Setup | Checksum: 1a92bb2b2
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2676.828 ; gain = 0.000 ; free physical = 9387 ; free virtual = 15571
+
+Phase 1.2 Setup Constraints And Sort Netlist
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 1a92bb2b2
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2676.828 ; gain = 0.000 ; free physical = 9387 ; free virtual = 15571
+Phase 1 Initialization | Checksum: 1a92bb2b2
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2676.828 ; gain = 0.000 ; free physical = 9387 ; free virtual = 15571
+
+Phase 2 Timer Update And Timing Data Collection
+
+Phase 2.1 Timer Update
+Phase 2.1 Timer Update | Checksum: 1a92bb2b2
+
+Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2676.828 ; gain = 0.000 ; free physical = 9387 ; free virtual = 15571
+
+Phase 2.2 Timing Data Collection
+Phase 2.2 Timing Data Collection | Checksum: 1a92bb2b2
+
+Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2676.828 ; gain = 0.000 ; free physical = 9387 ; free virtual = 15571
+Phase 2 Timer Update And Timing Data Collection | Checksum: 1a92bb2b2
+
+Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2676.828 ; gain = 0.000 ; free physical = 9387 ; free virtual = 15571
+
+Phase 3 Retarget
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 3 Retarget | Checksum: 1aa7905d8
+
+Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.08 . Memory (MB): peak = 2676.828 ; gain = 0.000 ; free physical = 9387 ; free virtual = 15571
+Retarget | Checksum: 1aa7905d8
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 21 cells
+
+Phase 4 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 4 Constant propagation | Checksum: 1e276e36c
+
+Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.09 . Memory (MB): peak = 2676.828 ; gain = 0.000 ; free physical = 9387 ; free virtual = 15571
+Constant propagation | Checksum: 1e276e36c
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 10 cells
+
+Phase 5 Sweep
+Phase 5 Sweep | Checksum: 1c0d391a3
+
+Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:00.12 . Memory (MB): peak = 2676.828 ; gain = 0.000 ; free physical = 9386 ; free virtual = 15571
+Sweep | Checksum: 1c0d391a3
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
+
+Phase 6 BUFG optimization
+Phase 6 BUFG optimization | Checksum: 1c0d391a3
+
+Time (s): cpu = 00:00:00.17 ; elapsed = 00:00:00.13 . Memory (MB): peak = 2708.844 ; gain = 32.016 ; free physical = 9386 ; free virtual = 15571
+BUFG optimization | Checksum: 1c0d391a3
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 7 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 7 Shift Register Optimization | Checksum: 1c0d391a3
+
+Time (s): cpu = 00:00:00.17 ; elapsed = 00:00:00.14 . Memory (MB): peak = 2708.844 ; gain = 32.016 ; free physical = 9386 ; free virtual = 15571
+Shift Register Optimization | Checksum: 1c0d391a3
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 8 Post Processing Netlist
+Phase 8 Post Processing Netlist | Checksum: 1c0d391a3
+
+Time (s): cpu = 00:00:00.17 ; elapsed = 00:00:00.14 . Memory (MB): peak = 2708.844 ; gain = 32.016 ; free physical = 9386 ; free virtual = 15571
+Post Processing Netlist | Checksum: 1c0d391a3
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+
+Phase 9 Finalization
+
+Phase 9.1 Finalizing Design Cores and Updating Shapes
+Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: 18bfc9e26
+
+Time (s): cpu = 00:00:00.18 ; elapsed = 00:00:00.16 . Memory (MB): peak = 2708.844 ; gain = 32.016 ; free physical = 9386 ; free virtual = 15571
+
+Phase 9.2 Verifying Netlist Connectivity
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2708.844 ; gain = 0.000 ; free physical = 9386 ; free virtual = 15571
+Phase 9.2 Verifying Netlist Connectivity | Checksum: 18bfc9e26
+
+Time (s): cpu = 00:00:00.18 ; elapsed = 00:00:00.16 . Memory (MB): peak = 2708.844 ; gain = 32.016 ; free physical = 9386 ; free virtual = 15571
+Phase 9 Finalization | Checksum: 18bfc9e26
+
+Time (s): cpu = 00:00:00.18 ; elapsed = 00:00:00.16 . Memory (MB): peak = 2708.844 ; gain = 32.016 ; free physical = 9386 ; free virtual = 15571
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               0  |              21  |                                              0  |
+|  Constant propagation         |               0  |              10  |                                              0  |
+|  Sweep                        |               0  |               0  |                                              0  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+Ending Logic Optimization Task | Checksum: 18bfc9e26
+
+Time (s): cpu = 00:00:00.18 ; elapsed = 00:00:00.16 . Memory (MB): peak = 2708.844 ; gain = 32.016 ; free physical = 9386 ; free virtual = 15571
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2708.844 ; gain = 0.000 ; free physical = 9386 ; free virtual = 15571
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+The Verilog library search path for library "PWROPT_WBOX_MODEL" is now "/opt/Xilinx/Vivado/2023.2/data/verilog/src/pwropt"The Verilog library search path for library "PWROPT_UNISIMS_MODEL" is now "/opt/Xilinx/Vivado/2023.2/data/verilog/src/pwropt"Restoring Verilog module 'PWROPT_WBOX_MODEL.KEEPER' from file '/opt/Xilinx/Vivado/2023.2/data/verilog/src/pwropt/PWROPT_WBOX_MODEL.sdbl'Restoring Verilog module 'PWROPT_WBOX_MODEL.PULLDOWN' from file '/opt/Xilinx/Vivado/2023.2/data/verilog/src/pwropt/PWROPT_WBOX_MODEL.sdbl'Restoring Verilog module 'PWROPT_WBOX_MODEL.PULLUP' from file '/opt/Xilinx/Vivado/2023.2/data/verilog/src/pwropt/PWROPT_WBOX_MODEL.sdbl'Restoring Verilog module 'PWROPT_WBOX_MODEL.RAMB16BWER' from file '/opt/Xilinx/Vivado/2023.2/data/verilog/src/pwropt/PWROPT_WBOX_MODEL.sdbl'Restoring Verilog module 'PWROPT_WBOX_MODEL.RAMB16BWER_INT' from file '/opt/Xilinx/Vivado/2023.2/data/verilog/src/pwropt/PWROPT_WBOX_MODEL.sdbl'Restoring Verilog module 'PWROPT_WBOX_MODEL.RAMB18E1' from file '/opt/Xilinx/Vivado/2023.2/data/verilog/src/pwropt/PWROPT_WBOX_MODEL.sdbl'Restoring Verilog module 'PWROPT_WBOX_MODEL.RAMB18E1_INT' from file '/opt/Xilinx/Vivado/2023.2/data/verilog/src/pwropt/PWROPT_WBOX_MODEL.sdbl'Restoring Verilog module 'PWROPT_WBOX_MODEL.RB18_INTERNAL_VLOG' from file '/opt/Xilinx/Vivado/2023.2/data/verilog/src/pwropt/PWROPT_WBOX_MODEL.sdbl'Restoring Verilog module 'PWROPT_WBOX_MODEL.RAMB18E2' from file '/opt/Xilinx/Vivado/2023.2/data/verilog/src/pwropt/PWROPT_WBOX_MODEL.sdbl'Restoring Verilog module 'PWROPT_WBOX_MODEL.RAMB18E2_INT' from file '/opt/Xilinx/Vivado/2023.2/data/verilog/src/pwropt/PWROPT_WBOX_MODEL.sdbl'Restoring Verilog module 'PWROPT_WBOX_MODEL.RAMB36E1' from file '/opt/Xilinx/Vivado/2023.2/data/verilog/src/pwropt/PWROPT_WBOX_MODEL.sdbl'Restoring Verilog module 'PWROPT_WBOX_MODEL.RAMB36E1_INT' from file '/opt/Xilinx/Vivado/2023.2/data/verilog/src/pwropt/PWROPT_WBOX_MODEL.sdbl'Restoring Verilog module 'PWROPT_WBOX_MODEL.RB36_INTERNAL_VLOG' from file '/opt/Xilinx/Vivado/2023.2/data/verilog/src/pwropt/PWROPT_WBOX_MODEL.sdbl'Restoring Verilog module 'PWROPT_WBOX_MODEL.RAMB36E2' from file '/opt/Xilinx/Vivado/2023.2/data/verilog/src/pwropt/PWROPT_WBOX_MODEL.sdbl'Restoring Verilog module 'PWROPT_WBOX_MODEL.RAMB36E2_INT' from file '/opt/Xilinx/Vivado/2023.2/data/verilog/src/pwropt/PWROPT_WBOX_MODEL.sdbl'Restoring Verilog module 'PWROPT_WBOX_MODEL.RAMB8BWER' from file '/opt/Xilinx/Vivado/2023.2/data/verilog/src/pwropt/PWROPT_WBOX_MODEL.sdbl'Restoring Verilog module 'PWROPT_WBOX_MODEL.RAMB8BWER_INT' from file '/opt/Xilinx/Vivado/2023.2/data/verilog/src/pwropt/PWROPT_WBOX_MODEL.sdbl'Restoring Verilog module 'PWROPT_WBOX_MODEL.SRLC16E' from file '/opt/Xilinx/Vivado/2023.2/data/verilog/src/pwropt/PWROPT_WBOX_MODEL.sdbl'Restoring Verilog module 'PWROPT_WBOX_MODEL.SRL16E' from file '/opt/Xilinx/Vivado/2023.2/data/verilog/src/pwropt/PWROPT_WBOX_MODEL.sdbl'Restoring Verilog module 'PWROPT_WBOX_MODEL.SRLC32E' from file '/opt/Xilinx/Vivado/2023.2/data/verilog/src/pwropt/PWROPT_WBOX_MODEL.sdbl'Restoring Verilog module 'PWROPT_WBOX_MODEL.SRL32E' from file '/opt/Xilinx/Vivado/2023.2/data/verilog/src/pwropt/PWROPT_WBOX_MODEL.sdbl'Restoring Verilog module 'PWROPT_WBOX_MODEL.URAM288' from file '/opt/Xilinx/Vivado/2023.2/data/verilog/src/pwropt/PWROPT_WBOX_MODEL.sdbl'Restoring Verilog module 'PWROPT_WBOX_MODEL.URAM288_INT' from file '/opt/Xilinx/Vivado/2023.2/data/verilog/src/pwropt/PWROPT_WBOX_MODEL.sdbl'extracting RAM for identifier 'tmp_mem' [../../../data/verilog/pwropt/pwropt_wbox/RAMB36E1.v:1302]extracting RAM for identifier 'mem' [../../../data/verilog/pwropt/pwropt_wbox/RAMB36E1.v:1303]extracting RAM for identifier 'memp' [../../../data/verilog/pwropt/pwropt_wbox/RAMB36E1.v:1305]extracting RAM for identifier 'dip_ecc_col' [../../../data/verilog/pwropt/pwropt_wbox/RAMB36E1.v:1344]extracting RAM for identifier 'dib_ecc_col' [../../../data/verilog/pwropt/pwropt_wbox/RAMB36E1.v:1347]extracting RAM for identifier 'di_x' [../../../data/verilog/pwropt/pwropt_wbox/RAMB36E1.v:1349]extracting RAM for identifier 'out_a' [../../../data/verilog/pwropt/pwropt_wbox/RAMB36E1.v:1358]extracting RAM for identifier 'out_b' [../../../data/verilog/pwropt/pwropt_wbox/RAMB36E1.v:1359]extracting RAM for identifier 'web_tmp' [../../../data/verilog/pwropt/pwropt_wbox/RAMB36E1.v:1360]extracting RAM for identifier 'addra_tmp' [../../../data/verilog/pwropt/pwropt_wbox/RAMB36E1.v:1361]extracting RAM for identifier 'addrb_tmp' [../../../data/verilog/pwropt/pwropt_wbox/RAMB36E1.v:1362]WARNING: [HDL 9-1511] Mix of blocking and non-blocking assignments to variable <doa_out> is not a recommended coding practice. [../../../data/verilog/pwropt/pwropt_wbox/RAMB36E1.v:1314]
+WARNING: [HDL 9-1511] Mix of blocking and non-blocking assignments to variable <dob_out> is not a recommended coding practice. [../../../data/verilog/pwropt/pwropt_wbox/RAMB36E1.v:1318]
+WARNING: [HDL 9-5556] actual bit length 32 differs from formal bit length 64 for port 'DOB' [../../../data/verilog/pwropt/pwropt_wbox/RAMB36E1.v:620]
+WARNING: [HDL 9-5556] actual bit length 4 differs from formal bit length 8 for port 'DOPB' [../../../data/verilog/pwropt/pwropt_wbox/RAMB36E1.v:622]
+extracting RAM for identifier 'tmp_mem' [../../../data/verilog/pwropt/pwropt_wbox/RAMB36E1.v:1302]extracting RAM for identifier 'mem' [../../../data/verilog/pwropt/pwropt_wbox/RAMB36E1.v:1303]extracting RAM for identifier 'memp' [../../../data/verilog/pwropt/pwropt_wbox/RAMB36E1.v:1305]extracting RAM for identifier 'dip_ecc_col' [../../../data/verilog/pwropt/pwropt_wbox/RAMB36E1.v:1344]extracting RAM for identifier 'dib_ecc_col' [../../../data/verilog/pwropt/pwropt_wbox/RAMB36E1.v:1347]extracting RAM for identifier 'di_x' [../../../data/verilog/pwropt/pwropt_wbox/RAMB36E1.v:1349]extracting RAM for identifier 'out_a' [../../../data/verilog/pwropt/pwropt_wbox/RAMB36E1.v:1358]extracting RAM for identifier 'out_b' [../../../data/verilog/pwropt/pwropt_wbox/RAMB36E1.v:1359]extracting RAM for identifier 'web_tmp' [../../../data/verilog/pwropt/pwropt_wbox/RAMB36E1.v:1360]extracting RAM for identifier 'addra_tmp' [../../../data/verilog/pwropt/pwropt_wbox/RAMB36E1.v:1361]extracting RAM for identifier 'addrb_tmp' [../../../data/verilog/pwropt/pwropt_wbox/RAMB36E1.v:1362]WARNING: [HDL 9-1511] Mix of blocking and non-blocking assignments to variable <doa_out> is not a recommended coding practice. [../../../data/verilog/pwropt/pwropt_wbox/RAMB36E1.v:1314]
+WARNING: [HDL 9-1511] Mix of blocking and non-blocking assignments to variable <dob_out> is not a recommended coding practice. [../../../data/verilog/pwropt/pwropt_wbox/RAMB36E1.v:1318]
+WARNING: [HDL 9-4995] latch inferred for net 'doa_outreg_mux[63]' [../../../data/verilog/pwropt/pwropt_wbox/RAMB36E1.v:2269]
+WARNING: [HDL 9-4995] latch inferred for net 'dob_outreg_mux[63]' [../../../data/verilog/pwropt/pwropt_wbox/RAMB36E1.v:2295]
+WARNING: [HDL 9-5556] actual bit length 32 differs from formal bit length 64 for port 'DOB' [../../../data/verilog/pwropt/pwropt_wbox/RAMB36E1.v:620]
+WARNING: [HDL 9-5556] actual bit length 4 differs from formal bit length 8 for port 'DOPB' [../../../data/verilog/pwropt/pwropt_wbox/RAMB36E1.v:622]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 16 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
+Number of BRAM Ports augmented: 0 newly gated: 0 Total Ports: 32
+Ending PowerOpt Patch Enables Task | Checksum: 18bfc9e26
+
+Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9274 ; free virtual = 15459
+Ending Power Optimization Task | Checksum: 18bfc9e26
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.86 . Memory (MB): peak = 2962.797 ; gain = 253.953 ; free physical = 9274 ; free virtual = 15458
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 18bfc9e26
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9274 ; free virtual = 15458
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9274 ; free virtual = 15458
+Ending Netlist Obfuscation Task | Checksum: 18bfc9e26
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9274 ; free virtual = 15458
+INFO: [Common 17-83] Releasing license: Implementation
+30 Infos, 59 Warnings, 100 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:10 . Memory (MB): peak = 2962.797 ; gain = 1154.371 ; free physical = 9274 ; free virtual = 15458
+INFO: [runtcl-4] Executing : report_drc -file cpu_wrapper_drc_opted.rpt -pb cpu_wrapper_drc_opted.pb -rpx cpu_wrapper_drc_opted.rpx
+Command: report_drc -file cpu_wrapper_drc_opted.rpt -pb cpu_wrapper_drc_opted.pb -rpx cpu_wrapper_drc_opted.rpx
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2023.2/data/ip'.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/cpu_wrapper_RT2.runs/impl_1/cpu_wrapper_drc_opted.rpt.
+report_drc completed successfully
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9272 ; free virtual = 15457
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9272 ; free virtual = 15457
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9272 ; free virtual = 15457
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9272 ; free virtual = 15457
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9272 ; free virtual = 15457
+Wrote Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9272 ; free virtual = 15457
+Write Physdb Complete: Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9272 ; free virtual = 15457
+INFO: [Common 17-1381] The checkpoint '/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/cpu_wrapper_RT2.runs/impl_1/cpu_wrapper_opt.dcp' has been generated.
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-83] Releasing license: Implementation
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 21 Warnings
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Starting Placer Task
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9265 ; free virtual = 15450
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 157457f10
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9265 ; free virtual = 15450
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9265 ; free virtual = 15450
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 786115c3
+
+Time (s): cpu = 00:00:00.67 ; elapsed = 00:00:00.47 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9261 ; free virtual = 15446
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 880aa3ed
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.71 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9260 ; free virtual = 15445
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 880aa3ed
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.72 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9260 ; free virtual = 15445
+Phase 1 Placer Initialization | Checksum: 880aa3ed
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.73 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9260 ; free virtual = 15445
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 16e7eb8d5
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.89 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9261 ; free virtual = 15446
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: dbd5e3c5
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.98 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9260 ; free virtual = 15445
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: dbd5e3c5
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.98 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9260 ; free virtual = 15445
+
+Phase 2.4 Global Placement Core
+
+Phase 2.4.1 UpdateTiming Before Physical Synthesis
+Phase 2.4.1 UpdateTiming Before Physical Synthesis | Checksum: 176f1051b
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:05 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9249 ; free virtual = 15434
+
+Phase 2.4.2 Physical Synthesis In Placer
+INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 119 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 0, two critical 0, total 0, new lutff created 0
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 51 nets or LUTs. Breaked 0 LUT, combined 51 existing LUTs and moved 0 existing LUT
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1123] No candidate cells found for Shift Register to Pipeline optimization
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1401] No candidate cells found for Shift Register optimization.
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9248 ; free virtual = 15433
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |            0  |             51  |                    51  |           0  |           1  |  00:00:00  |
+|  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |            0  |             51  |                    51  |           0  |           9  |  00:00:00  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.4.2 Physical Synthesis In Placer | Checksum: 12994ebb4
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:06 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9247 ; free virtual = 15432
+Phase 2.4 Global Placement Core | Checksum: 18ebdea41
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:06 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9248 ; free virtual = 15433
+Phase 2 Global Placement | Checksum: 18ebdea41
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:06 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9248 ; free virtual = 15433
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: eadc9dfa
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:06 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9248 ; free virtual = 15433
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 20c83b321
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:07 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9248 ; free virtual = 15433
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 2591d42cd
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:07 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9248 ; free virtual = 15433
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 1ac3ed398
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:07 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9248 ; free virtual = 15433
+
+Phase 3.5 Fast Optimization
+Phase 3.5 Fast Optimization | Checksum: 24b8bc49f
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:08 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9247 ; free virtual = 15432
+
+Phase 3.6 Small Shape Detail Placement
+Phase 3.6 Small Shape Detail Placement | Checksum: 173202331
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:08 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9244 ; free virtual = 15429
+
+Phase 3.7 Re-assign LUT pins
+Phase 3.7 Re-assign LUT pins | Checksum: 188af033c
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:08 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9244 ; free virtual = 15429
+
+Phase 3.8 Pipeline Register Optimization
+Phase 3.8 Pipeline Register Optimization | Checksum: 82ff3afc
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:08 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9244 ; free virtual = 15429
+
+Phase 3.9 Fast Optimization
+Phase 3.9 Fast Optimization | Checksum: 14363534c
+
+Time (s): cpu = 00:00:22 ; elapsed = 00:00:12 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9242 ; free virtual = 15428
+Phase 3 Detail Placement | Checksum: 14363534c
+
+Time (s): cpu = 00:00:22 ; elapsed = 00:00:12 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9243 ; free virtual = 15428
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: bbf3a80c
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.813 | TNS=-120.216 |
+Phase 1 Physical Synthesis Initialization | Checksum: d6bac4ac
+
+Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.06 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9230 ; free virtual = 15415
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to netlist editing failed: 0.
+Ending Physical Synthesis Task | Checksum: d6bac4ac
+
+Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.08 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9230 ; free virtual = 15415
+Phase 4.1.1.1 BUFG Insertion | Checksum: bbf3a80c
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:12 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9230 ; free virtual = 15415
+
+Phase 4.1.1.2 Post Placement Timing Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-4.049. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 10864acb3
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:23 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9245 ; free virtual = 15431
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:23 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9245 ; free virtual = 15431
+Phase 4.1 Post Commit Optimization | Checksum: 10864acb3
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:23 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9245 ; free virtual = 15431
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 10864acb3
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:23 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9245 ; free virtual = 15431
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ____________________________________________________
+|           | Global Congestion | Short Congestion  |
+| Direction | Region Size       | Region Size       |
+|___________|___________________|___________________|
+|      North|                1x1|                1x1|
+|___________|___________________|___________________|
+|      South|                1x1|                1x1|
+|___________|___________________|___________________|
+|       East|                1x1|                1x1|
+|___________|___________________|___________________|
+|       West|                1x1|                1x1|
+|___________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 10864acb3
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:23 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9245 ; free virtual = 15431
+Phase 4.3 Placer Reporting | Checksum: 10864acb3
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:23 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9245 ; free virtual = 15431
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9245 ; free virtual = 15431
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:23 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9245 ; free virtual = 15431
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1dea54b7d
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:23 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9245 ; free virtual = 15431
+Ending Placer Task | Checksum: 1537737c6
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:23 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9245 ; free virtual = 15431
+75 Infos, 59 Warnings, 100 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:24 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9245 ; free virtual = 15430
+INFO: [runtcl-4] Executing : report_io -file cpu_wrapper_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.14 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9240 ; free virtual = 15425
+INFO: [runtcl-4] Executing : report_utilization -file cpu_wrapper_utilization_placed.rpt -pb cpu_wrapper_utilization_placed.pb
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file cpu_wrapper_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.08 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9243 ; free virtual = 15429
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9247 ; free virtual = 15433
+Wrote PlaceDB: Time (s): cpu = 00:00:00.28 ; elapsed = 00:00:00.1 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9245 ; free virtual = 15431
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9245 ; free virtual = 15431
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9245 ; free virtual = 15431
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9245 ; free virtual = 15431
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9245 ; free virtual = 15432
+Write Physdb Complete: Time (s): cpu = 00:00:00.29 ; elapsed = 00:00:00.12 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9245 ; free virtual = 15432
+INFO: [Common 17-1381] The checkpoint '/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/cpu_wrapper_RT2.runs/impl_1/cpu_wrapper_placed.dcp' has been generated.
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+
+Starting Initial Update Timing Task
+
+Time (s): cpu = 00:00:00.32 ; elapsed = 00:00:00.15 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9235 ; free virtual = 15422
+INFO: [Vivado_Tcl 4-1435] PhysOpt_Tcl_Interface Runtime Before Starting Physical Synthesis Task | CPU: 0.38s |  WALL: 0.18s
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9235 ; free virtual = 15422
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.049 | TNS=-112.786 |
+Phase 1 Physical Synthesis Initialization | Checksum: 129bd78b8
+
+Time (s): cpu = 00:00:00.45 ; elapsed = 00:00:00.28 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9234 ; free virtual = 15421
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.049 | TNS=-112.786 |
+
+Phase 2 DSP Register Optimization
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 2 DSP Register Optimization | Checksum: 129bd78b8
+
+Time (s): cpu = 00:00:00.48 ; elapsed = 00:00:00.3 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9234 ; free virtual = 15421
+
+Phase 3 Critical Path Optimization
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.049 | TNS=-112.786 |
+INFO: [Physopt 32-702] Processed net _0407_[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net Memory.0.1.genblk1.genblk1.CAS_A. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0345_[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_cpu.u_ALU8.temp_HC. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0349_[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_cpu.u_ALU8.temp_BI[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0164_. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0163_[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0165_[6]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0397_[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0046_. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 7 pins.
+INFO: [Physopt 32-735] Processed net _0049_. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-3.906 | TNS=-110.637 |
+INFO: [Physopt 32-702] Processed net Memory.0.0.genblk1.genblk1.CAS_A. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net _0163_[4].  Re-placed instance _0955_
+INFO: [Physopt 32-735] Processed net _0163_[4]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-3.894 | TNS=-110.440 |
+INFO: [Physopt 32-702] Processed net _0163_[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net _0163_[0]. Critical path length was reduced through logic transformation on cell _0960__comp.
+INFO: [Physopt 32-735] Processed net _0403_[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-3.843 | TNS=-109.976 |
+INFO: [Physopt 32-702] Processed net _0049_. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0308_. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net DI_M[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0351_. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0352_. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net clk_dut. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0407_[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0345_[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_cpu.u_ALU8.temp_HC. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0349_[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_cpu.u_ALU8.temp_BI[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0164_. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0163_[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0165_[6]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0397_[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0046_. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0049_. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0308_. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net DI_M[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0351_. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0352_. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net clk_dut. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-3.843 | TNS=-109.976 |
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9234 ; free virtual = 15419
+Phase 3 Critical Path Optimization | Checksum: 129bd78b8
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:02 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9234 ; free virtual = 15419
+
+Phase 4 Critical Path Optimization
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-3.843 | TNS=-109.976 |
+INFO: [Physopt 32-702] Processed net _0407_[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net Memory.0.1.genblk1.genblk1.CAS_A. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0345_[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_cpu.u_ALU8.temp_HC. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0349_[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_cpu.u_ALU8.temp_BI[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0164_. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0163_[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0165_[6]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0397_[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0046_. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0049_. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0308_. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net DI_M[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0351_. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0352_. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net clk_dut. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0407_[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0345_[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_cpu.u_ALU8.temp_HC. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0349_[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net u_cpu.u_ALU8.temp_BI[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0164_. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0163_[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0165_[6]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0397_[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0046_. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0049_. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0308_. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net DI_M[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0351_. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net _0352_. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net clk_dut. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-3.843 | TNS=-109.976 |
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9232 ; free virtual = 15418
+Phase 4 Critical Path Optimization | Checksum: 129bd78b8
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:03 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9232 ; free virtual = 15418
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9232 ; free virtual = 15418
+INFO: [Physopt 32-603] Post Physical Optimization Timing Summary | WNS=-3.843 | TNS=-109.976 |
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization   |  WNS Gain (ns)  |  TNS Gain (ns)  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  DSP Register   |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Critical Path  |          0.206  |          2.810  |            0  |              0  |                     3  |           0  |           2  |  00:00:03  |
+|  Total          |          0.206  |          2.810  |            0  |              0  |                     3  |           0  |           3  |  00:00:03  |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9232 ; free virtual = 15418
+Ending Physical Synthesis Task | Checksum: 2145bf080
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:03 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9232 ; free virtual = 15418
+INFO: [Common 17-83] Releasing license: Implementation
+170 Infos, 59 Warnings, 100 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9228 ; free virtual = 15414
+Wrote PlaceDB: Time (s): cpu = 00:00:00.23 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9218 ; free virtual = 15405
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9218 ; free virtual = 15405
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9218 ; free virtual = 15405
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9218 ; free virtual = 15405
+Wrote Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9218 ; free virtual = 15406
+Write Physdb Complete: Time (s): cpu = 00:00:00.27 ; elapsed = 00:00:00.09 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9218 ; free virtual = 15405
+INFO: [Common 17-1381] The checkpoint '/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/cpu_wrapper_RT2.runs/impl_1/cpu_wrapper_physopt.dcp' has been generated.
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: ac941212 ConstDB: 0 ShapeSum: 99be380f RouteDB: 0
+Post Restoration Checksum: NetGraph: a349ea6f | NumContArr: fdacdb46 | Constraints: c2a8fa9d | Timing: c2a8fa9d
+Phase 1 Build RT Design | Checksum: 32648baef
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:23 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9163 ; free virtual = 15349
+
+Phase 2 Router Initialization
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 32648baef
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:23 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9163 ; free virtual = 15349
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 32648baef
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:23 . Memory (MB): peak = 2962.797 ; gain = 0.000 ; free physical = 9163 ; free virtual = 15349
+ Number of Nodes with overlaps = 0
+
+Phase 2.3 Update Timing
+Phase 2.3 Update Timing | Checksum: 2882e91dc
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:23 . Memory (MB): peak = 2980.000 ; gain = 17.203 ; free physical = 9133 ; free virtual = 15320
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-4.101 | TNS=-136.653| WHS=-1.677 | THS=-417.236|
+
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.00169735 %
+  Global Horizontal Routing Utilization  = 0.0004973 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 844
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 843
+  Number of Partially Routed Nets     = 1
+  Number of Node Overlaps             = 0
+
+Phase 2 Router Initialization | Checksum: 31b2af3ca
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:24 . Memory (MB): peak = 2984.969 ; gain = 22.172 ; free physical = 9133 ; free virtual = 15319
+
+Phase 3 Initial Routing
+
+Phase 3.1 Global Routing
+Phase 3.1 Global Routing | Checksum: 31b2af3ca
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:24 . Memory (MB): peak = 2984.969 ; gain = 22.172 ; free physical = 9133 ; free virtual = 15319
+
+Phase 3.2 Initial Net Routing
+Phase 3.2 Initial Net Routing | Checksum: 18b8494b7
+
+Time (s): cpu = 00:07:57 ; elapsed = 00:02:15 . Memory (MB): peak = 3239.969 ; gain = 277.172 ; free physical = 8874 ; free virtual = 15061
+Phase 3 Initial Routing | Checksum: 18b8494b7
+
+Time (s): cpu = 00:07:57 ; elapsed = 00:02:15 . Memory (MB): peak = 3239.969 ; gain = 277.172 ; free physical = 8874 ; free virtual = 15061
+INFO: [Route 35-580] Design has 278 pins with tight setup and hold constraints.
+
+The top 5 pins with tight setup and hold constraints:
+
++====================+===================+==================================================+
+| Launch Setup Clock | Launch Hold Clock | Pin                                              |
++====================+===================+==================================================+
+| dut_clk_pin        | emu_clk_pin       | Memory.0.2.genblk1.genblk1.upper/ADDRARDADDR[10] |
+| dut_clk_pin        | emu_clk_pin       | Memory.0.2.genblk1.genblk1.lower/ADDRARDADDR[10] |
+| dut_clk_pin        | emu_clk_pin       | Memory.0.7.genblk1.genblk1.upper/ADDRARDADDR[10] |
+| dut_clk_pin        | emu_clk_pin       | Memory.0.7.genblk1.genblk1.lower/ADDRARDADDR[10] |
+| dut_clk_pin        | emu_clk_pin       | Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[10] |
++--------------------+-------------------+--------------------------------------------------+
+
+File with complete list of pins: tight_setup_hold_pins.txt
+
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 204
+ Number of Nodes with overlaps = 42
+ Number of Nodes with overlaps = 20
+ Number of Nodes with overlaps = 14
+ Number of Nodes with overlaps = 11
+ Number of Nodes with overlaps = 6
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-4.290 | TNS=-811.881| WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: e9b687b6
+
+Time (s): cpu = 00:09:20 ; elapsed = 00:03:02 . Memory (MB): peak = 3239.969 ; gain = 277.172 ; free physical = 8869 ; free virtual = 15056
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 43
+ Number of Nodes with overlaps = 32
+ Number of Nodes with overlaps = 12
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 6
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-4.170 | TNS=-766.507| WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: 13269b7b6
+
+Time (s): cpu = 00:09:22 ; elapsed = 00:03:04 . Memory (MB): peak = 3239.969 ; gain = 277.172 ; free physical = 8870 ; free virtual = 15057
+
+Phase 4.3 Global Iteration 2
+ Number of Nodes with overlaps = 18
+ Number of Nodes with overlaps = 13
+ Number of Nodes with overlaps = 6
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-4.170 | TNS=-771.342| WHS=N/A    | THS=N/A    |
+
+Phase 4.3 Global Iteration 2 | Checksum: 1c612a240
+
+Time (s): cpu = 00:09:24 ; elapsed = 00:03:06 . Memory (MB): peak = 3239.969 ; gain = 277.172 ; free physical = 8872 ; free virtual = 15059
+Phase 4 Rip-up And Reroute | Checksum: 1c612a240
+
+Time (s): cpu = 00:09:24 ; elapsed = 00:03:06 . Memory (MB): peak = 3239.969 ; gain = 277.172 ; free physical = 8872 ; free virtual = 15059
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+
+Phase 5.1.1 Update Timing
+Phase 5.1.1 Update Timing | Checksum: 260b8d7bb
+
+Time (s): cpu = 00:09:24 ; elapsed = 00:03:06 . Memory (MB): peak = 3239.969 ; gain = 277.172 ; free physical = 8873 ; free virtual = 15059
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-4.170 | TNS=-750.024| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+Phase 5.1 Delay CleanUp | Checksum: 1f268b24d
+
+Time (s): cpu = 00:09:25 ; elapsed = 00:03:06 . Memory (MB): peak = 3239.969 ; gain = 277.172 ; free physical = 8872 ; free virtual = 15059
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 1f268b24d
+
+Time (s): cpu = 00:09:25 ; elapsed = 00:03:06 . Memory (MB): peak = 3239.969 ; gain = 277.172 ; free physical = 8872 ; free virtual = 15059
+Phase 5 Delay and Skew Optimization | Checksum: 1f268b24d
+
+Time (s): cpu = 00:09:25 ; elapsed = 00:03:06 . Memory (MB): peak = 3239.969 ; gain = 277.172 ; free physical = 8872 ; free virtual = 15059
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 1306721e8
+
+Time (s): cpu = 00:09:25 ; elapsed = 00:03:06 . Memory (MB): peak = 3239.969 ; gain = 277.172 ; free physical = 8872 ; free virtual = 15059
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-4.170 | TNS=-747.304| WHS=0.150  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 1306721e8
+
+Time (s): cpu = 00:09:25 ; elapsed = 00:03:06 . Memory (MB): peak = 3239.969 ; gain = 277.172 ; free physical = 8872 ; free virtual = 15059
+Phase 6 Post Hold Fix | Checksum: 1306721e8
+
+Time (s): cpu = 00:09:25 ; elapsed = 00:03:06 . Memory (MB): peak = 3239.969 ; gain = 277.172 ; free physical = 8872 ; free virtual = 15059
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.49802 %
+  Global Horizontal Routing Utilization  = 0.550369 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+
+--GLOBAL Congestion:
+Utilization threshold used for congestion level computation: 0.85
+Congestion Report
+North Dir 1x1 Area, Max Cong = 49.5495%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 60.3604%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 67.6471%, No Congested Regions.
+West Dir 1x1 Area, Max Cong = 67.6471%, No Congested Regions.
+
+------------------------------
+Reporting congestion hotspots
+------------------------------
+Direction: North
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: South
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: East
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: West
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+
+Phase 7 Route finalize | Checksum: 1306721e8
+
+Time (s): cpu = 00:09:25 ; elapsed = 00:03:06 . Memory (MB): peak = 3239.969 ; gain = 277.172 ; free physical = 8872 ; free virtual = 15059
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 1306721e8
+
+Time (s): cpu = 00:09:25 ; elapsed = 00:03:06 . Memory (MB): peak = 3239.969 ; gain = 277.172 ; free physical = 8872 ; free virtual = 15059
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 20481b6a4
+
+Time (s): cpu = 00:09:25 ; elapsed = 00:03:06 . Memory (MB): peak = 3239.969 ; gain = 277.172 ; free physical = 8872 ; free virtual = 15059
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=-4.170 | TNS=-747.304| WHS=0.150  | THS=0.000  |
+
+WARNING: [Route 35-328] Router estimated timing not met.
+Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.
+Phase 10 Post Router Timing | Checksum: 20481b6a4
+
+Time (s): cpu = 00:09:25 ; elapsed = 00:03:06 . Memory (MB): peak = 3239.969 ; gain = 277.172 ; free physical = 8872 ; free virtual = 15059
+INFO: [Route 35-16] Router Completed Successfully
+
+Phase 11 Post-Route Event Processing
+Phase 11 Post-Route Event Processing | Checksum: 25b86fdd2
+
+Time (s): cpu = 00:09:25 ; elapsed = 00:03:06 . Memory (MB): peak = 3239.969 ; gain = 277.172 ; free physical = 8873 ; free virtual = 15060
+Ending Routing Task | Checksum: 25b86fdd2
+
+Time (s): cpu = 00:09:25 ; elapsed = 00:03:06 . Memory (MB): peak = 3239.969 ; gain = 277.172 ; free physical = 8873 ; free virtual = 15060
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+190 Infos, 60 Warnings, 100 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:09:27 ; elapsed = 00:03:07 . Memory (MB): peak = 3239.969 ; gain = 277.172 ; free physical = 8873 ; free virtual = 15060
+INFO: [runtcl-4] Executing : report_drc -file cpu_wrapper_drc_routed.rpt -pb cpu_wrapper_drc_routed.pb -rpx cpu_wrapper_drc_routed.rpx
+Command: report_drc -file cpu_wrapper_drc_routed.rpt -pb cpu_wrapper_drc_routed.pb -rpx cpu_wrapper_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/cpu_wrapper_RT2.runs/impl_1/cpu_wrapper_drc_routed.rpt.
+report_drc completed successfully
+INFO: [runtcl-4] Executing : report_methodology -file cpu_wrapper_methodology_drc_routed.rpt -pb cpu_wrapper_methodology_drc_routed.pb -rpx cpu_wrapper_methodology_drc_routed.rpx
+Command: report_methodology -file cpu_wrapper_methodology_drc_routed.rpt -pb cpu_wrapper_methodology_drc_routed.pb -rpx cpu_wrapper_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 8 threads
+INFO: [Vivado_Tcl 2-1520] The results of Report Methodology are in file /home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/cpu_wrapper_RT2.runs/impl_1/cpu_wrapper_methodology_drc_routed.rpt.
+report_methodology completed successfully
+INFO: [runtcl-4] Executing : report_power -file cpu_wrapper_power_routed.rpt -pb cpu_wrapper_power_summary_routed.pb -rpx cpu_wrapper_power_routed.rpx
+Command: report_power -file cpu_wrapper_power_routed.rpt -pb cpu_wrapper_power_summary_routed.pb -rpx cpu_wrapper_power_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+200 Infos, 60 Warnings, 100 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [runtcl-4] Executing : report_route_status -file cpu_wrapper_route_status.rpt -pb cpu_wrapper_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -report_unconstrained -file cpu_wrapper_timing_summary_routed.rpt -pb cpu_wrapper_timing_summary_routed.pb -rpx cpu_wrapper_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+INFO: [runtcl-4] Executing : report_incremental_reuse -file cpu_wrapper_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [runtcl-4] Executing : report_clock_utilization -file cpu_wrapper_clock_utilization_routed.rpt
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file cpu_wrapper_bus_skew_routed.rpt -pb cpu_wrapper_bus_skew_routed.pb -rpx cpu_wrapper_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3328.012 ; gain = 0.000 ; free physical = 8861 ; free virtual = 15050
+Wrote PlaceDB: Time (s): cpu = 00:00:00.21 ; elapsed = 00:00:00.07 . Memory (MB): peak = 3328.012 ; gain = 0.000 ; free physical = 8861 ; free virtual = 15050
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3328.012 ; gain = 0.000 ; free physical = 8861 ; free virtual = 15050
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3328.012 ; gain = 0.000 ; free physical = 8861 ; free virtual = 15051
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3328.012 ; gain = 0.000 ; free physical = 8861 ; free virtual = 15051
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3328.012 ; gain = 0.000 ; free physical = 8861 ; free virtual = 15051
+Write Physdb Complete: Time (s): cpu = 00:00:00.25 ; elapsed = 00:00:00.1 . Memory (MB): peak = 3328.012 ; gain = 0.000 ; free physical = 8861 ; free virtual = 15051
+INFO: [Common 17-1381] The checkpoint '/home/goodkook/ETRI050_DesignKit/devel/Ref_Design/CPU_6502/emulation/Vivado/cpu_wrapper_RT2/cpu_wrapper_RT2.runs/impl_1/cpu_wrapper_routed.dcp' has been generated.
+Command: write_bitstream -force cpu_wrapper.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+WARNING: [DRC CFGBVS-1] Missing CFGBVS and CONFIG_VOLTAGE Design Properties: Neither the CFGBVS nor CONFIG_VOLTAGE voltage property is set in the current_design.  Configuration bank voltage select (CFGBVS) must be set to VCCO or GND, and CONFIG_VOLTAGE must be set to the correct configuration voltage, in order to determine the I/O voltage support for the pins in bank 0.  It is suggested to specify these either using the 'Edit Device Properties' function in the GUI or directly in the XDC file using the following syntax:
+
+ set_property CFGBVS value1 [current_design]
+ #where value1 is either VCCO or GND
+
+ set_property CONFIG_VOLTAGE value2 [current_design]
+ #where value2 is the voltage provided to configuration bank 0
+
+Refer to the device configuration user guide for more information.
+WARNING: [DRC CHECK-3] Report rule limit reached: REQP-1839 rule limit reached: 20 violations have been found.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[14] (net: _Address[14]) which is driven by a register (_1486_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[14] (net: _Address[14]) which is driven by a register (_1501_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[14] (net: _Address[14]) which is driven by a register (_1511_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[14] (net: _Address[14]) which is driven by a register (_1578_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1336_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1437_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1441_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1442_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1443_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1451_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1481_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1482_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1483_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1484_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1485_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1486_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1502_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1512_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1579_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Memory.0.0.genblk1.genblk1.lower has an input control pin Memory.0.0.genblk1.genblk1.lower/ADDRARDADDR[15] (net: _Address[15]) which is driven by a register (_1615_) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 22 Warnings
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 8 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./cpu_wrapper.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Project 1-1876] WebTalk data collection is mandatory when using a ULT device. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
+INFO: [Common 17-83] Releasing license: Implementation
+14 Infos, 22 Warnings, 0 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 3328.012 ; gain = 0.000 ; free physical = 8785 ; free virtual = 14978
+INFO: [Common 17-206] Exiting Vivado at Mon Jun 17 22:48:01 2024...

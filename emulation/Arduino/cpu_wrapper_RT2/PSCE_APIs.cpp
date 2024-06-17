@@ -4,8 +4,8 @@
 // Purpose : Arduino DUE PSCE-APIs
 // Author  : GoodKook, goodkook@gmail.com
 
-#include "PinMap_TANG_25K.h"
-//#include "PinMap_A7_100T.h"
+//#include "PinMap_TANG_25K.h"
+#include "PinMap_A7_100T.h"
 #include "PSCE_APIs.h"
 
 void PSCE::digitalWriteDirect(int pin, boolean val)

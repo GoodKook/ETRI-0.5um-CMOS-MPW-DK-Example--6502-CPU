@@ -22,8 +22,8 @@ inline int digitalReadDirect(int pin)
 #define DELAY_MICROS    0
 
 //----------------------------------------------------
-#define SIPEED_TANG_25K_BOARD
-//#define ARTY_A7_100T_BOARD
+//#define SIPEED_TANG_25K_BOARD
+#define ARTY_A7_100T_BOARD
 
 #ifdef ARTY_A7_100T_BOARD
 //--------------------------------------------------------------------

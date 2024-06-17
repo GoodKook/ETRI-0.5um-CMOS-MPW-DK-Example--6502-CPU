@@ -28,8 +28,8 @@ void setup()
   REG_PIOB_PDR |= PIO_PDR_P16;                          // Set PWM pin to an output
   REG_PWM_CLK = PWM_CLK_PREA(0) | PWM_CLK_DIVA(1);      // Set the PWM clock rate to 114MHz (Overclocked)
   REG_PWM_CMR0 = PWM_CMR_CPRE_CLKA;                     // Enable single slope PWM and set the clock source as CLKA
-  REG_PWM_CPRD0 = 360;                                  // Set the PWM frequency 114MHz/360 = 316Khz 
-  REG_PWM_CDTY0 = 180;                                  // Set the PWM duty cycle 50% (360/2=180)
+  REG_PWM_CPRD0 = 400;                                  // Set the PWM frequency 114MHz/360 = 316Khz 
+  REG_PWM_CDTY0 = 200;                                  // Set the PWM duty cycle 50% (360/2=180)
   REG_PWM_ENA = PWM_ENA_CHID0;                          // Enable the PWM channel
 }
 
@@ -58,6 +58,13 @@ void loop()
       {
         Download_CC65();
         CPU_Resetting();
+        delay(100);
+      }
+      else if (Kbd_In=='i')
+      {
+        Download_iHEX();
+        CPU_Resetting();
+        delay(100);
       }
       else
         CPU_WriteKeyboard(Kbd_In);
@@ -115,10 +122,12 @@ void CPU_Resetting()
     psce.EMU_Input(MEM_CONTROL_BYTE, 0x00);
     psce.DUT_Input();
 
-    delayMicroseconds(10);
+    delay(100);
 
     psce.EMU_Input(CPU_CONTROL_BYTE, CPU_RDY);
     psce.DUT_Input();
+
+    delay(100);
 }
 
 uint8_t CPU_ReadDisplay()
@@ -129,13 +138,13 @@ uint8_t CPU_ReadDisplay()
   psce.DUT_Output();
   ret = psce.EMU_Output(CPU_DSP_REG_OUT);
 
-  if (ret)// & 0x80) // Something to display ?
+  if (ret) // & 0x80) // Something to display ?
   {
     // Acknowledge Display
     psce.EMU_Input(CPU_CONTROL_BYTE, (CPU_RDY | DSP_RD));
     psce.DUT_Input();
 
-    delayMicroseconds(1);
+    //delayMicroseconds(100);
 
     psce.EMU_Input(CPU_CONTROL_BYTE, CPU_RDY);
     psce.DUT_Input();
@@ -245,3 +254,59 @@ uint8_t CPU_MemoryWrite(uint16_t Address, uint8_t byte)
   return CPU_MemoryRead(Address);
 }
 
+//------------------------------------------------------------------------
+void Download_iHEX()
+{
+  char      szBuff[128], szTemp[6];
+  uint16_t  nAddress;
+  uint8_t   byte;
+  int       i = 0;
+
+  while (true)
+  {
+    // Read line
+    i = 0;
+    while(true)
+    {
+      while(Serial.available() < 1) delayMicroseconds(1);
+      szBuff[i] = (uint8_t)Serial.read();
+      if (szBuff[i]==0x00)  break;
+      i++;
+    }
+
+    // HEX format
+    // :00 0000 00 12345678
+    // Start symbol ':'
+    if (szBuff[0] != ':') return;
+
+    // Number of Bytes
+    szTemp[0] = szBuff[1];
+    szTemp[1] = szBuff[2];
+    szTemp[2] = '\0';
+
+    int nByte = (int)strtol(szTemp, NULL, 16);
+    if (nByte < 1)  continue;
+
+    // Address
+    szTemp[0] = szBuff[3];
+    szTemp[1] = szBuff[4];
+    szTemp[2] = szBuff[5];
+    szTemp[3] = szBuff[6];
+    szTemp[4] = '\0';
+    nAddress = (uint16_t)strtol(szTemp, NULL, 16);
+
+    // Init. Memory
+    for (i = 0; i < nByte; i++)
+    {
+    	szTemp[0] = szBuff[i * 2 + 9];
+    	szTemp[1] = szBuff[i * 2 + 10];
+    	szTemp[2] = '\0';
+
+      byte = CPU_MemoryWrite(nAddress, (uint8_t)strtol(szTemp, NULL, 16));
+      while (Serial.availableForWrite() < 1) delayMicroseconds(1);
+      Serial.write((int)(byte));
+
+    	nAddress++;
+    }
+  }
+}

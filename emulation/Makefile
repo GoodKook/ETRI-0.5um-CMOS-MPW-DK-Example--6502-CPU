@@ -91,8 +91,8 @@ cpu_wrapper_SA : cpu_wrapper_SA.cpp
 cpu_wrapper_RT2 : cpu_wrapper_RT2.cpp
 	g++ -o cpu_wrapper_RT2 cpu_wrapper_RT2.cpp
 
-wave : sc_cpu_wrapper.vcd
-	gtkwave sc_cpu_wrapper.vcd --save=sc_cpu_wrapper.gtkw &
+wave : sc_cpu_wrapper_Emul.vcd
+	gtkwave sc_CPU_6502.vcd --save=sc_CPU_6502.gtkw &
 	gtkwave sc_cpu_wrapper_Emul.vcd --save=sc_cpu_wrapper_Emul.gtkw &
 
 clean :
@@ -103,8 +103,8 @@ clean :
 	rm -f cpu_wrapper_RT2
 	rm -f *.vcd
 	rm -f *.fifo
-	rm -f ./Vivado/CPU_6502/vivado*
-	rm -f ./Vivado/CPU_6502_RT/vivado*
+	rm -f ./Vivado/cpu_wrapper/vivado*
+	rm -f ./Vivado/cpu_wrapper_RT/vivado*
 
 debug : $(TOP_MODULE)
 	ddd $(TOP_MODULE)

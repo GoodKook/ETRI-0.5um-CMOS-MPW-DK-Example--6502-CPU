@@ -265,7 +265,8 @@ int main(int argc, char* argv[])
                 putchar(Disp);
                 fflush(stdout);
             }
-            usleep(10);
+            else
+                usleep(1);
         }
         KbdBuff[0] = getchar();
         KbdBuff[1] = '\0';

@@ -18,8 +18,8 @@ inline int digitalReadDirect(int pin)
   return !!(g_APinDescription[pin].pPort -> PIO_PDSR & g_APinDescription[pin].ulPin);
 }
 
-//#define ARTY_A7_100T_BOARD
-#define SIPEED_TANG_25K_BOARD
+#define ARTY_A7_100T_BOARD
+//#define SIPEED_TANG_25K_BOARD
 
 //#define PRINT_MEMORY_RW
 #define DELAY_MICROS    0

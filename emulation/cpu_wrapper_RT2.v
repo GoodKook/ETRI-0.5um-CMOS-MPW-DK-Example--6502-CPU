@@ -142,9 +142,8 @@ module cpu_wrapper(Din_emu, Dout_emu, Addr_emu, load_emu, get_emu, IO_Req, clk_e
     end
 
     // FSM for Display Register ----------------------------------------------
-    parameter sReady        = 4'b0001;
-    parameter sWaitDspAck   = 4'b0010;
-    parameter sCheckDspAcc  = 4'b0100;
+    parameter sReady        = 2'b01;
+    parameter sWaitDspAck   = 2'b10;
     reg [3:0]   state;
     reg [7:0]   Dsp_Reg;
     always @(posedge clk_dut or posedge reset)
@@ -161,24 +160,23 @@ module cpu_wrapper(Din_emu, Dout_emu, Addr_emu, load_emu, get_emu, IO_Req, clk_e
                     if (AB==`PIA_DSP_REG && WE)
                     begin
                         Dsp_Reg <= DO;
+                        state <= sReady;
+                    end
+                    else if (Dsp_Rd)
+                    begin
                         state <= sWaitDspAck;
                     end
                     else
                         state <= sReady;
                 end
                 sWaitDspAck:
-                    if (Dsp_Rd)
-                        state <= sCheckDspAcc;
-                    else
-                        state <= sWaitDspAck;
-                sCheckDspAcc:
-                    if (!Dsp_Rd)
+                    if (AB!=`PIA_DSP_REG && !Dsp_Rd)
                     begin
                         Dsp_Reg <= 0;
                         state <= sReady;
                     end
                     else
-                        state <= sCheckDspAcc;
+                        state <= sWaitDspAck;
                 default:
                     state <= sReady;
             endcase
